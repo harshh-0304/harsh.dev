@@ -1,0 +1,38 @@
+---
+import SectionHeading from "./SectionHeading.astro";
+import { education } from "@/config/site";
+---
+
+<section class="py-20 lg:py-28 bg-surface-alt">
+  <div class="mx-auto max-w-6xl px-6">
+    <SectionHeading label="Education" title="Academic background" />
+
+    <div class="stagger">
+      {
+        education.map((edu) => (
+          <div class="fade-up rounded-2xl border border-border bg-white p-6 lg:p-8 max-w-2xl">
+            <div class="flex items-start justify-between gap-4 mb-4">
+              <div>
+                <h3 class="text-xl font-bold text-text-primary mb-1">{edu.degree}</h3>
+                <p class="text-text-secondary font-medium">{edu.institution}</p>
+                <p class="text-sm text-text-tertiary">{edu.location}</p>
+              </div>
+              <div class="text-right shrink-0">
+                <p class="text-sm text-text-tertiary">{edu.period}</p>
+                <p class="text-sm font-semibold text-text-primary mt-1">CGPA: {edu.cgpa}</p>
+              </div>
+            </div>
+            <ul class="space-y-2">
+              {edu.highlights.map((h) => (
+                <li class="flex items-start gap-2 text-sm text-text-secondary">
+                  <svg class="w-4 h-4 text-brand shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                  {h}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

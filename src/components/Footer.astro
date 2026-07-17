@@ -1,0 +1,55 @@
+---
+import { site, navigation } from "@/config/site";
+---
+
+<footer class="border-t border-border bg-white py-12">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
+      <!-- Brand -->
+      <div class="max-w-xs">
+        <a href="/" class="text-lg font-semibold tracking-tight text-text-primary">
+          {site.name}<span class="text-brand">.</span>
+        </a>
+        <p class="text-sm text-text-tertiary mt-2 leading-relaxed">
+          Backend Engineer building scalable systems and full-stack applications for businesses.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div class="flex gap-12">
+        <div>
+          <p class="text-sm font-semibold text-text-primary mb-3">Navigation</p>
+          <div class="flex flex-col gap-2">
+            {
+              navigation.map((item) => (
+                <a
+                  href={item.href}
+                  class="text-sm text-text-tertiary hover:text-text-primary transition-colors"
+                >
+                  {item.label}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+        <div>
+          <p class="text-sm font-semibold text-text-primary mb-3">Connect</p>
+          <div class="flex flex-col gap-2">
+            <a href={`mailto:${site.email}`} class="text-sm text-text-tertiary hover:text-text-primary transition-colors">Email</a>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">LinkedIn</a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-text-tertiary">
+        &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
+      </p>
+      <p class="text-xs text-text-tertiary">
+        Built with Astro & Tailwind CSS
+      </p>
+    </div>
+  </div>
+</footer>

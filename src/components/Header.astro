@@ -1,0 +1,110 @@
+---
+import { site, navigation } from "@/config/site";
+---
+
+<header
+  id="header"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+>
+  <nav class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-lg font-semibold tracking-tight text-text-primary">
+      {site.name}<span class="text-brand">.</span>
+    </a>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex items-center gap-8">
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm text-text-secondary hover:text-text-primary transition-colors"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contact"
+        class="inline-flex items-center gap-2 rounded-lg bg-brand px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-brand-dark transition-colors"
+      >
+        Get in touch
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 -mr-2 text-text-secondary"
+      aria-label="Toggle menu"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    id="mobile-menu"
+    class="hidden md:hidden border-t border-border bg-white/95 backdrop-blur-md"
+  >
+    <div class="px-6 py-4 flex flex-col gap-3">
+      {
+        navigation.map((item) => (
+          <a
+            href={item.href}
+            class="mobile-nav-link text-base text-text-secondary hover:text-text-primary py-2 transition-colors"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contact"
+        class="mobile-nav-link mt-2 inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-white"
+      >
+        Get in touch
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu toggle
+  const btn = document.getElementById("mobile-menu-btn");
+  const menu = document.getElementById("mobile-menu");
+  btn?.addEventListener("click", () => {
+    menu?.classList.toggle("hidden");
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll(".mobile-nav-link").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu?.classList.add("hidden");
+    });
+  });
+
+  // Header background on scroll
+  const header = document.getElementById("header");
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header?.classList.add("bg-white/80", "backdrop-blur-md", "border-b", "border-border");
+    } else {
+      header?.classList.remove("bg-white/80", "backdrop-blur-md", "border-b", "border-border");
+    }
+  };
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+</script>

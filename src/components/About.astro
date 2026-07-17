@@ -1,0 +1,66 @@
+---
+import { site } from "@/config/site";
+import SectionHeading from "./SectionHeading.astro";
+---
+
+<section id="about" class="py-20 lg:py-28 bg-surface-alt">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
+      <!-- Left column -->
+      <div class="lg:col-span-3">
+        <SectionHeading label="About" title="A bit about me" />
+
+        <div class="fade-up space-y-5 text-text-secondary leading-relaxed">
+          <p>
+            I'm Harsh — a backend engineer based in Ahmedabad, India. I build the systems
+            that businesses rely on: APIs that handle thousands of requests, databases that
+            keep data consistent, and integrations that just work.
+          </p>
+          <p>
+            My most significant work has been at <strong class="text-text-primary">Betorra</strong>,
+            where I architected the backend for a multi-provider gaming platform. I integrated
+            1,200+ games across 4 external providers, built idempotent transaction processing,
+            and designed the entire API contract layer — all running on AWS.
+          </p>
+          <p>
+            I'm currently working as a Backend Engineer at <strong class="text-text-primary">Betorra</strong>,
+            architecting production services for a live gaming platform — handling real-time sessions,
+            wallet operations, and multi-provider integrations at scale.
+          </p>
+          <p>
+            What I enjoy most is taking a complex business requirement and translating it into
+            clean, maintainable code. Whether it's a REST API, a full-stack application, or an
+            AI integration — I focus on building things that are reliable, well-documented, and
+            easy to work with.
+          </p>
+          <p>
+            If you're looking for someone who can understand your business needs and build the
+            technology to support them, I'd love to chat.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right column: Quick facts -->
+      <div class="lg:col-span-2">
+        <div class="fade-up rounded-2xl border border-border bg-white p-6 lg:p-8">
+          <h3 class="text-lg font-semibold text-text-primary mb-6">Quick facts</h3>
+          <div class="space-y-4">
+            {[
+              { label: "Location", value: site.location },
+              { label: "Experience", value: "1+ years in production" },
+              { label: "Focus", value: "Backend & Full-Stack" },
+              { label: "Stack", value: "NestJS · TypeScript · PostgreSQL" },
+              { label: "Currently at", value: "Betorra (Backend Engineer)" },
+              { label: "Education", value: "B.E. Computer Engineering" },
+            ].map((item) => (
+              <div class="flex justify-between items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0">
+                <span class="text-sm text-text-tertiary shrink-0">{item.label}</span>
+                <span class="text-sm text-text-primary text-right font-medium">{item.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
