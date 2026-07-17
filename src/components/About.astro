@@ -3,7 +3,7 @@ import { site } from "@/config/site";
 import SectionHeading from "./SectionHeading.astro";
 ---
 
-<section id="about" class="py-20 lg:py-28 bg-surface-alt">
+<section id="about" class="py-16 lg:py-20 bg-surface-alt">
   <div class="mx-auto max-w-6xl px-6">
     <div class="grid lg:grid-cols-5 gap-12 lg:gap-16 items-start">
       <!-- Left column -->
@@ -11,7 +11,7 @@ import SectionHeading from "./SectionHeading.astro";
         <SectionHeading label="About" title="A bit about me" />
 
         <div class="fade-up space-y-5 text-text-secondary leading-relaxed">
-          <p>
+          <p class="text-lg">
             I'm Harsh — a backend engineer based in Ahmedabad, India. I build the systems
             that businesses rely on: APIs that handle thousands of requests, databases that
             keep data consistent, and integrations that just work.
@@ -35,27 +35,32 @@ import SectionHeading from "./SectionHeading.astro";
           </p>
           <p>
             If you're looking for someone who can understand your business needs and build the
-            technology to support them, I'd love to chat.
+            technology to support them, <a href="#contact" class="text-brand font-medium hover:text-brand-dark transition-colors">let's chat</a>.
           </p>
         </div>
       </div>
 
       <!-- Right column: Quick facts -->
       <div class="lg:col-span-2">
-        <div class="fade-up rounded-2xl border border-border bg-white p-6 lg:p-8">
+        <div class="fade-up rounded-2xl border border-border bg-white p-6 lg:p-8 shadow-sm">
           <h3 class="text-lg font-semibold text-text-primary mb-6">Quick facts</h3>
           <div class="space-y-4">
             {[
-              { label: "Location", value: site.location },
-              { label: "Experience", value: "1+ years in production" },
-              { label: "Focus", value: "Backend & Full-Stack" },
-              { label: "Stack", value: "NestJS · TypeScript · PostgreSQL" },
-              { label: "Currently at", value: "Betorra (Backend Engineer)" },
-              { label: "Education", value: "B.E. Computer Engineering" },
+              { label: "Location", value: site.location, icon: '<circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7Z"/>' },
+              { label: "Experience", value: "1+ years in production", icon: '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>' },
+              { label: "Focus", value: "Backend & Full-Stack", icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>' },
+              { label: "Stack", value: "NestJS · TypeScript · PostgreSQL", icon: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>' },
+              { label: "Currently at", value: "Betorra (Backend Engineer)", icon: '<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' },
+              { label: "Education", value: "B.E. Computer Engineering", icon: '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/>' },
             ].map((item) => (
-              <div class="flex justify-between items-start gap-4 pb-4 border-b border-border last:border-0 last:pb-0">
-                <span class="text-sm text-text-tertiary shrink-0">{item.label}</span>
-                <span class="text-sm text-text-primary text-right font-medium">{item.value}</span>
+              <div class="flex items-start gap-3 pb-4 border-b border-border last:border-0 last:pb-0">
+                <div class="mt-0.5 text-text-tertiary shrink-0">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" set:html={item.icon} />
+                </div>
+                <div class="flex-1 min-w-0">
+                  <span class="text-xs text-text-tertiary uppercase tracking-wide">{item.label}</span>
+                  <p class="text-sm text-text-primary font-medium mt-0.5">{item.value}</p>
+                </div>
               </div>
             ))}
           </div>

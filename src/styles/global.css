@@ -6,13 +6,13 @@
   --color-brand-light: #6366f1;
   --color-brand-dark: #4338ca;
   --color-surface: #ffffff;
-  --color-surface-alt: #f9fafb;
+  --color-surface-alt: #f8fafc;
   --color-surface-elevated: #ffffff;
   --color-border: #e5e7eb;
   --color-border-light: #f3f4f6;
-  --color-text-primary: #111827;
-  --color-text-secondary: #4b5563;
-  --color-text-tertiary: #9ca3af;
+  --color-text-primary: #0f172a;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #94a3b8;
   --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
 }
 
@@ -28,11 +28,25 @@ body {
   background-color: var(--color-surface);
 }
 
+/* Hero gradient mesh */
+.hero-gradient {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(79, 70, 229, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 80% 50%, rgba(99, 102, 241, 0.05), transparent),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(79, 70, 229, 0.04), transparent);
+}
+
+/* Subtle grid pattern for sections */
+.grid-pattern {
+  background-image: radial-gradient(circle at 1px 1px, rgba(0, 0, 0, 0.03) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
 /* Scroll animation */
 .fade-up {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transform: translateY(20px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .fade-up.visible {

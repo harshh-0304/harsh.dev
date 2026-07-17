@@ -7,7 +7,7 @@ const experiences = (await getCollection("experience")).sort(
 );
 ---
 
-<section id="experience" class="py-20 lg:py-28">
+<section id="experience" class="py-16 lg:py-20">
   <div class="mx-auto max-w-6xl px-6">
     <SectionHeading
       label="Experience"
@@ -17,56 +17,60 @@ const experiences = (await getCollection("experience")).sort(
 
     <div class="relative stagger">
       <!-- Timeline line -->
-      <div class="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-border"></div>
+      <div class="absolute left-0 md:left-8 top-0 bottom-0 w-px bg-gradient-to-b from-brand/40 via-border to-border"></div>
 
       {
         experiences.map((exp, i) => (
-          <div class="fade-up relative pl-8 md:pl-20 pb-12 last:pb-0">
+          <div class="fade-up relative pl-8 md:pl-20 pb-12 last:pb-0 group">
             {/* Timeline dot */}
-            <div class={`absolute left-0 md:left-8 top-1 w-2.5 h-2.5 -translate-x-1/2 rounded-full border-2 ${
-              i === 0 ? "border-brand bg-brand" : "border-border bg-white"
+            <div class={`absolute left-0 md:left-8 top-1.5 w-3 h-3 -translate-x-1/2 rounded-full border-2 transition-colors ${
+              i === 0 ? "border-brand bg-brand shadow-sm shadow-brand/30" : "border-border bg-white group-hover:border-brand/40"
             }`} />
 
-            {/* Type badge */}
-            <span class={`inline-block text-xs font-medium rounded-full px-2.5 py-0.5 mb-3 ${
-              exp.data.type === "Full-Time"
-                ? "text-brand bg-brand/5"
-                : exp.data.type === "Contract"
-                  ? "text-amber-700 bg-amber-50"
-                  : "text-text-tertiary bg-gray-100"
-            }`}>
-              {exp.data.type}
-            </span>
-
-            <h3 class="text-xl font-bold text-text-primary mb-1">{exp.data.title}</h3>
-
-            <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
-              {exp.data.url ? (
-                <a
-                  href={exp.data.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-brand font-medium hover:text-brand-dark transition-colors"
-                >
-                  {exp.data.company}
-                </a>
-              ) : (
-                <span class="text-text-secondary font-medium">{exp.data.company}</span>
-              )}
-              <span class="text-text-tertiary text-sm">{exp.data.period}</span>
-            </div>
-
-            {/* Rendered markdown body */}
-            <div class="text-sm text-text-secondary leading-relaxed mb-4 [&_li]:mb-1.5 [&_ul]:list-disc [&_ul]:pl-4 [&_strong]:text-text-primary [&_strong]:font-semibold">
-              <Fragment set:html={exp.rendered?.html || ""} />
-            </div>
-
-            <div class="flex flex-wrap gap-1.5">
-              {exp.data.tech.map((t: string) => (
-                <span class="text-xs font-medium text-text-secondary bg-gray-100 rounded-md px-2 py-0.5">
-                  {t}
+            <div class="rounded-2xl border border-border bg-white p-6 lg:p-7 hover:border-brand/10 hover:shadow-lg hover:shadow-brand/5 transition-all duration-300">
+              <div class="flex flex-wrap items-center gap-2 mb-3">
+                {/* Type badge */}
+                <span class={`text-xs font-medium rounded-full px-2.5 py-0.5 ${
+                  exp.data.type === "Full-Time"
+                    ? "text-brand bg-brand/5"
+                    : exp.data.type === "Contract"
+                      ? "text-amber-700 bg-amber-50"
+                      : "text-text-tertiary bg-gray-100"
+                }`}>
+                  {exp.data.type}
                 </span>
-              ))}
+                <span class="text-xs text-text-tertiary">{exp.data.period}</span>
+              </div>
+
+              <h3 class="text-xl font-bold text-text-primary mb-1">{exp.data.title}</h3>
+
+              <div class="mb-4">
+                {exp.data.url ? (
+                  <a
+                    href={exp.data.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-brand font-medium hover:text-brand-dark transition-colors"
+                  >
+                    {exp.data.company}
+                  </a>
+                ) : (
+                  <span class="text-text-secondary font-medium">{exp.data.company}</span>
+                )}
+              </div>
+
+              {/* Rendered markdown body */}
+              <div class="text-sm text-text-secondary leading-relaxed mb-5 [&_li]:mb-1.5 [&_ul]:list-disc [&_ul]:pl-4 [&_strong]:text-text-primary [&_strong]:font-semibold">
+                <Fragment set:html={exp.rendered?.html || ""} />
+              </div>
+
+              <div class="flex flex-wrap gap-1.5">
+                {exp.data.tech.map((t: string) => (
+                  <span class="text-xs font-medium text-text-secondary bg-surface-alt border border-border-light rounded-md px-2 py-0.5">
+                    {t}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         ))

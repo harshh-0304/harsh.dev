@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading.astro";
 import { skills } from "@/config/site";
 ---
 
-<section id="skills" class="py-20 lg:py-28">
+<section id="skills" class="py-16 lg:py-20">
   <div class="mx-auto max-w-6xl px-6">
     <SectionHeading
       label="Skills"
@@ -14,11 +14,11 @@ import { skills } from "@/config/site";
     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
       {
         Object.entries(skills).map(([category, items]) => (
-          <div class="fade-up rounded-2xl border border-border bg-white p-6">
-            <h3 class="text-base font-semibold text-text-primary mb-4">{category}</h3>
+          <div class="fade-up rounded-2xl border border-border bg-white p-6 hover:border-brand/10 hover:shadow-md transition-all duration-300">
+            <h3 class="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wide">{category}</h3>
             <div class="flex flex-wrap gap-2">
               {items.map((skill) => (
-                <span class="text-sm text-text-secondary bg-surface-alt border border-border-light rounded-lg px-3 py-1.5">
+                <span class="text-sm text-text-secondary bg-surface-alt border border-border-light rounded-lg px-3 py-1.5 hover:text-brand hover:border-brand/20 transition-colors duration-200">
                   {skill}
                 </span>
               ))}

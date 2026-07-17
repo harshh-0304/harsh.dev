@@ -8,8 +8,8 @@ interface Props {
 const { label, title, description } = Astro.props;
 ---
 
-<div class="fade-up mb-12 lg:mb-16">
-  <p class="text-sm font-medium text-brand mb-3 tracking-wide uppercase">{label}</p>
-  <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-4">{title}</h2>
-  {description && <p class="text-lg text-text-secondary max-w-2xl">{description}</p>}
+<div class="fade-up mb-10 lg:mb-12">
+  <p class="text-sm font-semibold text-brand mb-3 tracking-wide uppercase">{label}</p>
+  <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary mb-4 leading-tight">{title}</h2>
+  {description && <p class="text-lg text-text-secondary max-w-2xl leading-relaxed">{description}</p>}
 </div>
