@@ -10,32 +10,26 @@ import SectionHeading from "./SectionHeading.astro";
       <div class="lg:col-span-3">
         <SectionHeading label="About" title="A bit about me" />
 
-        <div class="fade-up space-y-5 text-text-secondary leading-relaxed">
+        <div class="fade-up space-y-4 text-text-secondary leading-relaxed">
           <p class="text-lg">
-            I'm Harsh — a backend engineer based in Ahmedabad, India. I build the systems
-            that businesses rely on: APIs that handle thousands of requests, databases that
-            keep data consistent, and integrations that just work.
+            I'm Harsh — a software engineer based in Ahmedabad, India. I work across the full stack,
+            from designing database schemas and APIs to building the interfaces that users interact with.
           </p>
           <p>
             My most significant work has been at <strong class="text-text-primary">Betorra</strong>,
-            where I architected the backend for a multi-provider gaming platform. I integrated
-            1,200+ games across 4 external providers, built idempotent transaction processing,
-            and designed the entire API contract layer — all running on AWS.
+            where I architected a multi-provider gaming platform — integrating 1,200+ games across
+            4 external providers, building idempotent transaction processing, and shipping the full
+            API layer running on AWS.
           </p>
           <p>
-            I'm currently working as a Backend Engineer at <strong class="text-text-primary">Betorra</strong>,
-            architecting production services for a live gaming platform — handling real-time sessions,
-            wallet operations, and multi-provider integrations at scale.
+            Outside of work, I build things for myself: AI-powered monitoring dashboards, SaaS tools,
+            and automation systems. I'm comfortable picking up whatever stack the problem calls for —
+            whether that's NestJS, Python, React, or something new.
           </p>
           <p>
-            What I enjoy most is taking a complex business requirement and translating it into
-            clean, maintainable code. Whether it's a REST API, a full-stack application, or an
-            AI integration — I focus on building things that are reliable, well-documented, and
-            easy to work with.
-          </p>
-          <p>
-            If you're looking for someone who can understand your business needs and build the
-            technology to support them, <a href="#contact" class="text-brand font-medium hover:text-brand-dark transition-colors">let's chat</a>.
+            What drives me is turning a complex requirement into something clean and reliable. If
+            you need someone who can own a feature end to end — backend, frontend, and deployment —
+            <a href="#contact" class="text-brand font-medium hover:text-brand-dark transition-colors">let's chat</a>.
           </p>
         </div>
       </div>
@@ -48,9 +42,9 @@ import SectionHeading from "./SectionHeading.astro";
             {[
               { label: "Location", value: site.location, icon: '<circle cx="12" cy="10" r="3"/><path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 7 8 11.7Z"/>' },
               { label: "Experience", value: "1+ years in production", icon: '<rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>' },
-              { label: "Focus", value: "Backend & Full-Stack", icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>' },
-              { label: "Stack", value: "NestJS · TypeScript · PostgreSQL", icon: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>' },
-              { label: "Currently at", value: "Betorra (Backend Engineer)", icon: '<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' },
+              { label: "Focus", value: "Full-Stack & Software Engineering", icon: '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>' },
+              { label: "Stack", value: "NestJS · React · TypeScript · Python", icon: '<ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>' },
+              { label: "Currently at", value: "Betorra (Software Engineer)", icon: '<rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>' },
               { label: "Education", value: "B.E. Computer Engineering", icon: '<path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 10 3 12 0v-5"/>' },
             ].map((item) => (
               <div class="flex items-start gap-3 pb-4 border-b border-border last:border-0 last:pb-0">
