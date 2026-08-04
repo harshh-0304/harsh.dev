@@ -5,14 +5,13 @@ description: "Production backend for a multi-provider gaming platform — archit
 problem: "A gaming platform needed a unified backend to integrate multiple external gaming providers, each with different APIs, while maintaining transaction consistency and real-time session management at scale."
 solution: "Built a modular monolith backend with NestJS supporting 1,200+ games across 4 certified providers. Implemented idempotent transaction handling, secure callback validation, and reconciliation pipelines."
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
-url: "https://dev.betorra.com/"
-featured: true
+featured: false
 professional: true
-order: 9
+order: 14
 status: "Live"
 buttons:
-  - label: "Live Website"
-    url: "https://dev.betorra.com/"
+  - label: "View Details"
+    url: "/projects/betorra"
     style: "primary"
 ---
 
