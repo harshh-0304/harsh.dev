@@ -116,3 +116,38 @@ body {
   box-shadow: 3px 3px 0px 0px var(--color-text-primary);
   transform: translate(-1px, -1px);
 }
+
+/* Dark Mode Neobrutalist Helper Classes */
+.neo-btn-dark {
+  border: 2px solid #ffffff;
+  box-shadow: 3px 3px 0px 0px #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.neo-btn-dark:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px 0px #ffffff;
+}
+
+.neo-btn-dark:active {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0px 0px #ffffff;
+}
+
+.neo-card-dark {
+  border: 2px solid #ffffff;
+  box-shadow: 4px 4px 0px 0px #ffffff;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neo-card-dark:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #ffffff;
+}
+
+.neo-card-dark:active {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px 0px #ffffff;
+}
