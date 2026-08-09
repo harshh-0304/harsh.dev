@@ -8,7 +8,7 @@ tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
 url: "https://dev.betorra.com/"
 featured: true
 professional: true
-order: 9
+order: 2
 status: "Live"
 buttons:
   - label: "Live Website"

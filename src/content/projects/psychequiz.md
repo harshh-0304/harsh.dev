@@ -6,7 +6,7 @@ problem: "Mental health assessment tools are often clinical and inaccessible. Th
 solution: "Built an ML-driven assessment platform with Flask, featuring dynamic scoring, classification algorithms, and privacy-focused design."
 tech: ["Python", "Flask", "Machine Learning", "scikit-learn", "REST APIs"]
 url: "https://psyche-quiz.onrender.com/"
-featured: false
+featured: true
 order: 5
 status: "Live"
 ---

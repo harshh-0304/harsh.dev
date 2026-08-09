@@ -8,7 +8,7 @@ tech: ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Tailwind CSS"]
 url: "https://www.firmsledger.com/"
 featured: true
 professional: true
-order: 9
+order: 1
 status: "Live"
 buttons:
   - label: "Live Website"
@@ -24,3 +24,4 @@ buttons:
 - Designed a normalized **PostgreSQL database schema** and optimized queries to handle complex state, category, and subcategory filtering
 - Implemented robust UI features including dynamic state filters and category counts for smooth, intuitive search navigation
 - Kept the platform 100% unbiased and organic, ensuring no sponsored listings or paid rankings disrupt the sourcing experience
+- Implemented robust UI features including dynamic state filters and category counts for smooth, intuitive search navigation.
