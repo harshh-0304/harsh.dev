@@ -1,31 +1,58 @@
 ---
-import SectionHeading from "./SectionHeading.astro";
 import { skills } from "@/config/site";
 ---
 
-<section id="skills" class="py-16 lg:py-20">
+<section id="skills" class="py-24 lg:py-32 bg-surface border-t border-border">
   <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-    <SectionHeading
-      label="Skills"
-      title="Technologies I work with"
-      description="Focused on backend engineering with production experience across these technologies."
-    />
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
+      <div>
+        <p class="text-xs font-bold uppercase tracking-widest text-text-tertiary mb-3" data-reveal="fade-up">
+          Tooling & Technologies
+        </p>
+        <h2 class="text-4xl sm:text-5xl font-black tracking-tight text-text-primary uppercase font-display" data-reveal="fade-up" data-reveal-delay="100">
+          Technical Capabilities
+        </h2>
+      </div>
+      <p class="text-sm text-text-secondary max-w-sm leading-relaxed" data-reveal="fade-up" data-reveal-delay="200">
+        Engineered with modern frameworks, reliable database solutions, cloud platforms, and production AI tools.
+      </p>
+    </div>
 
-    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger">
-      {
-        Object.entries(skills).map(([category, items]) => (
-          <div class="fade-up rounded-2xl border border-border bg-white p-6 hover:border-brand/10 hover:shadow-md transition-all duration-300">
-            <h3 class="text-sm font-semibold text-text-primary mb-4 uppercase tracking-wide">{category}</h3>
+    <!-- Structured 6-Card Category Grid -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+      {Object.entries(skills).map(([category, items], idx) => (
+        <div
+          key={category}
+          class="rounded-2xl border border-border bg-surface-alt p-6 sm:p-7 flex flex-col justify-between shadow-sm hover:border-text-primary/30 hover:shadow-md transition-all duration-300 group"
+          data-reveal="fade-up"
+          data-reveal-delay={idx * 80}
+        >
+          <div>
+            <!-- Category Header -->
+            <div class="flex items-center justify-between pb-4 border-b border-border/80 mb-5">
+              <h3 class="text-sm font-extrabold text-text-primary uppercase tracking-wider font-display group-hover:text-black transition-colors">
+                {category}
+              </h3>
+              <span class="text-xs font-mono font-bold text-text-tertiary bg-white border border-border px-2.5 py-0.5 rounded-full">
+                {items.length}
+              </span>
+            </div>
+
+            <!-- Skill Tags Grid -->
             <div class="flex flex-wrap gap-2">
               {items.map((skill) => (
-                <span class="text-sm text-text-secondary bg-surface-alt border border-border-light rounded-lg px-3 py-1.5 hover:text-brand hover:border-brand/20 transition-colors duration-200">
+                <span
+                  key={skill}
+                  class="text-xs font-semibold text-text-primary bg-white border border-border px-3 py-1.5 rounded-lg shadow-2xs hover:border-text-primary hover:bg-text-primary hover:text-white transition-all duration-200 cursor-default"
+                >
                   {skill}
                 </span>
               ))}
             </div>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
   </div>
 </section>

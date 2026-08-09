@@ -68,20 +68,29 @@ const canonicalURL = new URL(Astro.url.pathname, site.url);
   <body class="bg-white text-text-primary antialiased">
     <slot />
 
-    <!-- Scroll animation observer -->
+    <!-- Scroll & Entrance Animation Setup -->
     <script>
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("visible");
-            }
-          });
-        },
-        { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
-      );
+      import { initHeroAnimation, initScrollReveals, initWordReveal } from "@/scripts/animations";
 
-      document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+      document.addEventListener("DOMContentLoaded", () => {
+        initHeroAnimation();
+        initScrollReveals();
+        initWordReveal();
+
+        // Legacy .fade-up compatibility observer
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+        );
+
+        document.querySelectorAll(".fade-up").forEach((el) => observer.observe(el));
+      });
     </script>
   </body>
 </html>

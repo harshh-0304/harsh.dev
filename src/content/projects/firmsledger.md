@@ -6,6 +6,7 @@ problem: "Most manufacturer directories sell the top spot to the highest bidder,
 solution: "Built a transparent B2B directory with over 5,000+ verified manufacturers. Every listing is manually checked, completely free to search and list, ensuring that quality and relevance dictate search placement rather than advertising spend."
 tech: ["React", "TypeScript", "Node.js", "Python", "PostgreSQL", "Tailwind CSS"]
 url: "https://www.firmsledger.com/"
+image: "/projects/firmsledger/landing.png"
 featured: true
 professional: true
 order: 1

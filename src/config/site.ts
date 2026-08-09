@@ -1,12 +1,12 @@
 export const site = {
   name: "Harsh Jadav",
-  title: "Harsh Jadav — Backend Engineer & Full-Stack Developer",
+  title: "Harsh Jadav — Software Engineer",
   description:
-    "Backend Engineer with production experience building scalable REST APIs, transaction processing systems, and AI-powered products. Specializing in NestJS, TypeScript, PostgreSQL, and cloud deployments.",
-  url: "https://harsh-jadav.vercel.app",
+    "I design and build digital products, from modern web applications to the systems that power them.",
+  url: "https://www.harshjadav.com",
   ogImage: "/og.png",
-  role: "Backend Engineer",
-  tagline: "Building scalable backend systems & full-stack applications",
+  role: "Software Engineer",
+  tagline: "I design and build digital products.",
   location: "Ahmedabad, India",
   email: "bakasakuta33@gmail.com",
   phone: "+91 84019 60169",
@@ -14,55 +14,73 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/harshh33/",
   resumeUrl: "/resume.pdf",
   avatar: "/avatar.jpeg",
-  availability: "Available for Backend & Full-Stack roles",
+  availability: "Software Engineer · Based in India",
 };
 
 export const services = [
   {
-    title: "Business Websites",
+    number: "01",
+    title: "Full-Stack Applications",
     description:
-      "Professional websites that build trust and convert visitors into customers. Clean design, fast performance, and SEO-optimized.",
+      "End-to-end web products, web apps, and management platforms engineered for speed, clean UX, and production stability.",
     icon: "globe",
   },
   {
-    title: "Admin Dashboards",
+    number: "02",
+    title: "Backend & API Architecture",
     description:
-      "Custom admin panels and dashboards to manage your business operations efficiently with real-time data and intuitive interfaces.",
-    icon: "layout-dashboard",
-  },
-  {
-    title: "SaaS Products",
-    description:
-      "End-to-end SaaS development from database design to deployment. Scalable architecture built for growth.",
-    icon: "rocket",
-  },
-  {
-    title: "API Development",
-    description:
-      "Robust REST APIs with proper documentation, authentication, and error handling. Built to integrate with any frontend or service.",
+      "High-throughput REST APIs, multi-provider payment/wallet pipelines, database schemas, and cloud deployment pipelines.",
     icon: "code",
   },
   {
-    title: "AI Integrations",
+    number: "03",
+    title: "AI & Intelligent Automation",
     description:
-      "Integrate AI capabilities into your existing products — from chatbots and NLP pipelines to intelligent automation.",
+      "Production AI integrations including LLM pipelines, speech synthesis, NLP workflows, and custom automation tools.",
     icon: "brain",
-  },
-  {
-    title: "Internal Tools",
-    description:
-      "Custom internal tools and automation systems that save your team hours of manual work every week.",
-    icon: "wrench",
   },
 ];
 
 export const skills = {
-  Backend: ["NestJS", "Node.js", "Express.js", "Django", "ASP.NET Core", "Flask"],
-  Languages: ["TypeScript", "Python", "JavaScript", "SQL", "C#"],
-  "Databases & ORM": ["PostgreSQL", "MongoDB", "SQL Server", "Prisma", "Entity Framework"],
-  "Cloud & DevOps": ["AWS (EC2, S3)", "Git", "GitHub", "Docker", "Vercel"],
-  "AI & ML": ["Prompt Engineering", "LangChain", "NLP Pipelines", "Speech Synthesis"],
-  Tools: ["Swagger / OpenAPI", "Postman", "React", "Tailwind CSS"],
+  Frontend: ["Next.js", "React", "React Native", "TypeScript", "Tailwind CSS"],
+  Backend: [
+    "Node.js",
+    "NestJS",
+    "Express",
+    "Python",
+    "Django",
+    "Flask",
+    "ASP.NET Core",
+    "Clerk",
+    "Python Scraping",
+    "BeautifulSoup",
+  ],
+  Data: [
+    "PostgreSQL",
+    "MongoDB",
+    "SQL Server",
+    "Supabase",
+    "Prisma",
+    "Entity Framework",
+  ],
+  "Cloud & DevOps": ["AWS", "Docker", "Vercel", "Hostinger", "Netlify Hosting"],
+  "AI & ML": [
+    "AI LLM Integration",
+    "LangChain",
+    "NLP",
+    "AI Plugins",
+    "Prompt Engineering",
+  ],
+  Tools: [
+    "Git",
+    "GitHub",
+    "Postman",
+    "Swagger",
+    "Canva",
+    "Claude Code",
+    "MCP",
+    "HTML Email / Inline Email",
+  ],
 };
 
 export const education = [
@@ -73,30 +91,17 @@ export const education = [
     period: "Sept 2021 – May 2025",
     cgpa: "7.43 / 10",
     highlights: [
-      "Computer Science fundamentals: DSA, DBMS, OS, Networks",
+      "Computer Science fundamentals: DSA, DBMS, OS, Computer Networks",
       "Backend and full-stack development projects",
       "Machine learning and AI coursework",
     ],
   },
 ];
 
-export const trustedTech = [
-  "NestJS",
-  "TypeScript",
-  "PostgreSQL",
-  "Node.js",
-  "Python",
-  "AWS",
-  "React",
-  "MongoDB",
-  "Docker",
-  "Prisma",
-];
-
 export const navigation = [
-  { label: "Services", href: "#services" },
-  { label: "Projects", href: "#projects" },
+  { label: "Work", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];

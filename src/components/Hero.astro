@@ -1,100 +1,138 @@
 ---
 import { site } from "@/config/site";
+
+const techStack = [
+  { label: "TS", name: "TypeScript", bg: "bg-blue-600 text-white" },
+  { label: "JS", name: "JavaScript", bg: "bg-amber-400 text-slate-900" },
+  { label: "Nest", name: "NestJS", bg: "bg-rose-600 text-white" },
+  { label: "Py", name: "Python", bg: "bg-sky-600 text-white" },
+  { label: "Postgres", name: "PostgreSQL", bg: "bg-slate-800 text-white" },
+  { label: "AWS", name: "AWS", bg: "bg-orange-500 text-white" },
+  { label: "React", name: "React", bg: "bg-cyan-500 text-white" },
+  { label: "Docker", name: "Docker", bg: "bg-blue-500 text-white" },
+];
 ---
 
-<section class="relative min-h-screen flex items-center pt-20 pb-16 hero-gradient overflow-hidden">
-  <!-- Decorative shapes -->
-  <div class="absolute top-20 right-[10%] w-72 h-72 bg-brand/[0.03] rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 left-[5%] w-96 h-96 bg-brand/[0.02] rounded-full blur-3xl"></div>
+<section id="hero-section" class="pt-28 pb-16 hero-gradient relative overflow-hidden">
+  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+    
+    <!-- Top Quote Statement Box (Chanh Dang Style) -->
+    <div class="rounded-2xl border border-border bg-white p-6 sm:p-8 shadow-sm text-center mb-8" data-reveal="fade-up">
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-text-primary tracking-tight font-display max-w-3xl mx-auto leading-tight">
+        "Power is not in the tools, but in the mind that codes."
+      </h2>
 
-  <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12 w-full relative">
-    <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      <!-- Left: Content -->
-      <div class="order-2 lg:order-1">
-        <!-- Availability Badge -->
-        <div class="fade-up inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3.5 py-1.5 mb-8">
-          <span class="relative flex h-2 w-2">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex h-2 w-2 rounded-full bg-emerald-500"></span>
+      <!-- Tech Stack Icons Strip -->
+      <div class="flex flex-wrap items-center justify-center gap-2 mt-6">
+        {techStack.map((tech) => (
+          <span
+            key={tech.name}
+            title={tech.name}
+            class={`px-3 py-1 rounded-full text-xs font-bold font-mono shadow-2xs ${tech.bg} cursor-default`}
+          >
+            {tech.label}
           </span>
-          <span class="text-sm text-emerald-700 font-medium">{site.availability}</span>
-        </div>
-
-        <!-- Heading -->
-        <h1 class="fade-up text-4xl sm:text-5xl lg:text-[3.5rem] font-bold tracking-tight leading-[1.08] text-text-primary mb-6">
-          I build backends<br />
-          <span class="bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent">that scale.</span>
-        </h1>
-
-        <!-- Description -->
-        <p class="fade-up text-lg text-text-secondary leading-relaxed max-w-xl mb-10">
-          Backend Engineer shipping production systems — scalable REST APIs,
-          real-time transaction processing, and multi-provider integrations.
-          Currently architecting backend services at <strong class="text-text-primary font-semibold">Betorra</strong>.
-        </p>
-
-        <!-- Stats -->
-        <div class="fade-up flex gap-10 mb-10">
-          <div>
-            <div class="text-3xl font-bold text-text-primary">1+</div>
-            <div class="text-sm text-text-tertiary mt-0.5">Years Experience</div>
-          </div>
-          <div class="w-px bg-border"></div>
-          <div>
-            <div class="text-3xl font-bold text-text-primary">11+</div>
-            <div class="text-sm text-text-tertiary mt-0.5">Projects Shipped</div>
-          </div>
-          <div class="w-px bg-border"></div>
-          <div>
-            <div class="text-3xl font-bold text-text-primary">1,200+</div>
-            <div class="text-sm text-text-tertiary mt-0.5">Games Integrated</div>
-          </div>
-        </div>
-
-        <!-- CTAs -->
-        <div class="fade-up flex flex-wrap gap-4">
-          <a
-            href="#projects"
-            class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-medium text-white shadow-lg shadow-brand/25 hover:bg-brand-dark hover:shadow-xl hover:shadow-brand/30 hover:-translate-y-0.5 transition-all duration-200"
-          >
-            View my work
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-          </a>
-          <a
-            href="#contact"
-            class="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-base font-medium text-text-primary shadow-sm hover:bg-surface-alt hover:-translate-y-0.5 transition-all duration-200"
-          >
-            Get in touch
-          </a>
-          <a
-            href={site.resumeUrl}
-            download="Harsh_Jadav_Resume.pdf"
-            class="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-base font-medium text-text-secondary hover:text-text-primary hover:bg-surface-alt hover:-translate-y-0.5 transition-all duration-200"
-          >
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            Resume
-          </a>
-        </div>
-      </div>
-
-      <!-- Right: Photo -->
-      <div class="order-1 lg:order-2 flex justify-center lg:justify-end">
-        <div class="fade-up relative">
-          <div class="w-64 h-64 sm:w-80 sm:h-80 rounded-3xl overflow-hidden border border-border shadow-2xl shadow-gray-200/50 ring-1 ring-black/[0.02]">
-            <img
-              src={site.avatar}
-              alt={site.name}
-              width="320"
-              height="320"
-              class="w-full h-full object-cover"
-              loading="eager"
-            />
-          </div>
-          <!-- Decorative elements -->
-          <div class="absolute -z-10 -top-4 -right-4 w-full h-full rounded-3xl bg-brand/5 border border-brand/10"></div>
-          <div class="absolute -z-20 -top-8 -right-8 w-full h-full rounded-3xl bg-brand/[0.02] border border-brand/5"></div>
-        </div>
+        ))}
       </div>
     </div>
+
+    <!-- Main Developer Banner Card (Chanh Dang Style in Clean White Theme) -->
+    <div class="rounded-3xl border border-border bg-white shadow-xl overflow-hidden relative" data-reveal="fade-up" data-reveal-delay="100">
+      
+      <!-- Top Banner Header Area with Wave Pattern -->
+      <div class="h-36 sm:h-44 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 relative p-6 flex items-start justify-between">
+        <!-- Abstract wave / mesh background overlay -->
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.15),rgba(255,255,255,0))] pointer-events-none"></div>
+
+        <!-- Rating / Status Badge Top Right -->
+        <div class="relative z-10 flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-3 py-1 rounded-full text-xs font-medium text-white">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Open for Software Engineering Roles</span>
+        </div>
+      </div>
+
+      <!-- Overlapping Circular Avatar -->
+      <div class="px-6 sm:px-8 relative pb-8">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-border/80 pb-6">
+          <div class="flex flex-col sm:flex-row sm:items-end gap-5">
+            <!-- Avatar Image -->
+            <div class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-full border-4 border-white shadow-xl overflow-hidden -mt-12 sm:-mt-14 bg-white shrink-0">
+              <img
+                src={site.avatar}
+                alt={site.name}
+                width="112"
+                height="112"
+                class="w-full h-full object-cover"
+              />
+            </div>
+
+            <!-- Profile Name & Title -->
+            <div class="mt-2 sm:mt-0">
+              <h1 class="text-2xl sm:text-3xl font-black text-text-primary tracking-tight font-display flex items-center gap-2">
+                {site.name}
+                <!-- Verified Badge -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" class="text-sky-500 shrink-0">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                </svg>
+              </h1>
+              <p class="text-sm font-semibold text-text-secondary mt-0.5">
+                Software Engineer <span class="text-text-tertiary">·</span> Full-Stack & Backend Architecture
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex flex-wrap items-center gap-3 pt-2 sm:pt-0">
+            <a
+              href="#projects"
+              class="inline-flex items-center gap-2 rounded-full bg-text-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-white shadow-md hover:bg-black transition-all"
+            >
+              Selected Work &rarr;
+            </a>
+            <a
+              href="#contact"
+              class="inline-flex items-center gap-2 rounded-full border border-text-primary bg-white px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-text-primary hover:bg-surface-alt transition-all"
+            >
+              Get in touch
+            </a>
+          </div>
+        </div>
+
+        <!-- Quick Developer Metadata Info Grid (Chanh Dang Style) -->
+        <div class="grid sm:grid-cols-3 gap-4 py-5 text-xs text-text-secondary border-b border-border/80">
+          <div class="flex items-center gap-2">
+            <span class="text-text-tertiary">💼</span>
+            <span>Software Engineer at <strong class="text-text-primary font-semibold">Betorra</strong></span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-text-tertiary">✉️</span>
+            <a href={`mailto:${site.email}`} class="hover:text-text-primary transition-colors">{site.email}</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-text-tertiary">📍</span>
+            <span>{site.location}</span>
+          </div>
+        </div>
+
+        <!-- Bottom Integrated Key Numbers Strip -->
+        <div class="grid grid-cols-3 gap-6 pt-6 text-center sm:text-left">
+          <div>
+            <span class="text-xl sm:text-2xl font-black text-text-primary font-display block">1.5+ Yrs</span>
+            <span class="text-[11px] text-text-tertiary font-medium">Production Experience</span>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black text-text-primary font-display block">11+</span>
+            <span class="text-[11px] text-text-tertiary font-medium">Projects Shipped</span>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-black text-text-primary font-display block">1,200+</span>
+            <span class="text-[11px] text-text-tertiary font-medium">Games Integrated</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
   </div>
 </section>
