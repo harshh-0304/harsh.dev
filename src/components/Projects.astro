@@ -5,266 +5,169 @@ import { getCollection } from "astro:content";
 const allProjects = (await getCollection("projects")).sort(
   (a, b) => a.data.order - b.data.order
 );
-const professional = allProjects.filter((p) => p.data.professional);
-const personal = allProjects.filter((p) => !p.data.professional);
-const personalFeatured = personal.filter((p) => p.data.featured);
-const personalOthers = personal.filter((p) => !p.data.featured);
+
+// Top 4 Featured Client/Primary Projects
+const featured = allProjects.filter(p => p.data.featured && p.data.professional);
+// Remaining projects for clean text directory
+const secondary = allProjects.filter(p => !featured.includes(p));
 ---
 
-<section id="projects" class="py-16 lg:py-20 bg-surface-alt">
+<section id="projects" class="py-24 lg:py-32 bg-surface relative">
   <div class="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-    <SectionHeading
-      label="Projects"
-      title="Work I'm proud of"
-      description="Real products solving real problems — from client work to personal builds."
-    />
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-20">
+      <div>
+        <p class="text-xs font-semibold uppercase tracking-widest text-text-tertiary mb-3" data-reveal="fade-up">
+          Featured Work
+        </p>
+        <h2 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-text-primary uppercase" data-reveal="fade-up" data-reveal-delay="100">
+          Selected Projects
+        </h2>
+      </div>
+      <p class="text-sm text-text-secondary max-w-sm" data-reveal="fade-up" data-reveal-delay="200">
+        Production systems, high-concurrency platforms, and client products delivered with precision.
+      </p>
+    </div>
 
-    <!-- Professional Projects -->
-    {professional.length > 0 && (
-      <div class="mb-16">
-        <div class="fade-up flex items-center gap-3 mb-8">
-          <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            Professional Client Work
-          </span>
-          <span class="text-xs text-text-tertiary">Selected client work</span>
-        </div>
+    <!-- Editorial Showcase Entries -->
+    <div class="space-y-28 lg:space-y-36">
+      {featured.map((project, index) => {
+        const projectNum = `0${index + 1}`;
+        const hasScreenshots = project.data.screenshots && project.data.screenshots.length > 0;
+        const mainImage = project.data.image || (hasScreenshots ? project.data.screenshots[0] : null);
 
-        <div class="grid lg:grid-cols-2 gap-6 stagger">
-          {professional.map((project) => {
-            const hasImage = project.data.image || (project.data.category === "iOS Mobile Application" && project.data.screenshots);
-            return (
-              <div class={`fade-up group rounded-2xl border border-border bg-white overflow-hidden hover:border-brand/20 hover:shadow-xl hover:shadow-brand/5 hover:-translate-y-1 transition-all duration-300 ${!hasImage ? "lg:col-span-2" : ""}`}>
-                {/* Screenshot hero — mobile app vs web vs none */}
-                {project.data.category === "iOS Mobile Application" && project.data.screenshots ? (
-                  <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 aspect-[16/10] flex items-center justify-center gap-3 px-8 py-6">
-                    {project.data.screenshots.slice(0, 3).map((src: string, i: number) => (
-                      <div class={`relative rounded-xl overflow-hidden shadow-lg border border-gray-200 h-full w-auto transition-transform duration-500 ${i === 1 ? "group-hover:scale-[1.04] z-10" : "group-hover:scale-[1.02]"}`}>
-                        <img
-                          src={src}
-                          alt={`${project.data.title} screen ${i + 1}`}
-                          class="h-full w-auto object-contain"
-                          loading="lazy"
-                        />
-                      </div>
-                    ))}
-                  </div>
-                ) : project.data.image ? (
-                  <div class="relative overflow-hidden bg-gray-50 aspect-[16/10]">
-                    <img
-                      src={project.data.image}
-                      alt={`${project.data.title} screenshot`}
-                      class="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
-                      loading="lazy"
-                      width="800"
-                      height="500"
-                    />
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                ) : null}
-
-                <div class={`p-6 ${!hasImage ? "lg:p-8" : ""}`}>
-                  {/* Badges */}
-                  <div class="flex flex-wrap items-center gap-2 mb-3">
-                    <span class="text-xs font-medium text-amber-700 bg-amber-50 border border-amber-200/50 rounded-full px-2.5 py-0.5">
-                      Professional Project
-                    </span>
-                    <span class={`text-xs font-medium rounded-full px-2.5 py-0.5 ${
-                      project.data.status === "Live"
-                        ? "text-emerald-700 bg-emerald-50"
-                        : project.data.status === "Completed"
-                          ? "text-blue-700 bg-blue-50"
-                          : "text-text-tertiary bg-gray-100"
-                    }`}>
+        return (
+          <div key={project.data.title} class="group border-t border-border pt-12 lg:pt-16">
+            <!-- Project Row -->
+            <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+              <!-- Left Metadata & Content (5 cols) -->
+              <div class="lg:col-span-5 flex flex-col justify-between h-full space-y-6">
+                <div>
+                  <div class="flex items-center justify-between mb-4">
+                    <span class="text-3xl font-extrabold text-brand tracking-tighter">{projectNum}</span>
+                    <span class="text-xs font-semibold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
                       {project.data.status}
                     </span>
-                    <span class="text-xs text-text-tertiary bg-gray-50 rounded-full px-2.5 py-0.5">
-                      {project.data.category}
-                    </span>
                   </div>
 
-                  <h3 class={`font-bold text-text-primary mb-2 ${!hasImage ? "text-2xl" : "text-xl"}`}>{project.data.title}</h3>
+                  <h3 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mb-3 group-hover:text-brand transition-colors duration-300">
+                    {project.data.title}
+                  </h3>
+                  <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-6">
+                    {project.data.category}
+                  </p>
 
-                  <p class={`text-text-secondary leading-relaxed mb-4 ${!hasImage ? "text-base max-w-3xl" : "text-sm"}`}>
+                  <p class="text-base text-text-secondary leading-relaxed mb-6">
                     {project.data.description}
                   </p>
 
-                  {/* Problem / Solution for no-image cards */}
-                  {!hasImage && project.data.problem && (
-                    <div class="mb-5 grid sm:grid-cols-2 gap-4 max-w-3xl">
-                      <div class="rounded-xl bg-surface-alt p-4">
-                        <p class="text-xs font-medium text-text-tertiary uppercase tracking-wide mb-1">The Challenge</p>
-                        <p class="text-sm text-text-secondary">{project.data.problem}</p>
-                      </div>
-                      {project.data.solution && (
-                        <div class="rounded-xl bg-surface-alt p-4">
-                          <p class="text-xs font-medium text-text-tertiary uppercase tracking-wide mb-1">The Solution</p>
-                          <p class="text-sm text-text-secondary">{project.data.solution}</p>
-                        </div>
-                      )}
-                    </div>
-                  )}
-
-                  {/* Tech badges */}
-                  {project.data.tech.length > 0 && (
-                    <div class="flex flex-wrap gap-1.5 mb-5">
-                      {project.data.tech.map((t: string) => (
-                        <span class="text-xs font-medium text-text-secondary bg-gray-100 rounded-md px-2 py-1">
-                          {t}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Buttons */}
-                  {project.data.buttons && (
-                    <div class="flex flex-wrap gap-3">
-                      {project.data.buttons.map((btn) => {
-                        const isInternal = btn.url?.startsWith("/");
-                        return btn.url ? (
-                          <a
-                            href={btn.url}
-                            {...(!isInternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                            class={`inline-flex items-center gap-1.5 text-sm font-medium rounded-lg px-4 py-2 transition-all ${
-                              btn.style === "primary"
-                                ? "bg-brand text-white hover:bg-brand-dark shadow-sm"
-                                : "border border-border text-text-secondary hover:text-text-primary hover:bg-surface-alt"
-                            }`}
-                          >
-                            {btn.label === "Visit Website" || btn.label === "Live Website" ? (
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                            ) : btn.label === "View Details" ? (
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
-                            ) : null}
-                            {btn.label}
-                          </a>
-                        ) : null;
-                      })}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </div>
-    )}
-
-    <!-- Personal / Side Projects -->
-    {personal.length > 0 && (
-      <div>
-        <div class="fade-up flex items-center gap-3 mb-8">
-          <span class="inline-flex items-center gap-1.5 text-sm font-semibold text-text-primary">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
-            Personal Projects
-          </span>
-        </div>
-
-        {/* Featured personal projects */}
-        <div class="grid lg:grid-cols-2 gap-6 mb-8 stagger">
-          {personalFeatured.map((project) => (
-            <div class="fade-up group rounded-2xl border border-border bg-white p-6 lg:p-8 hover:border-brand/20 hover:shadow-xl hover:shadow-brand/5 hover:-translate-y-1 transition-all duration-300">
-              <div class="flex items-start justify-between mb-4">
-                <div>
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="text-xs font-medium text-brand bg-brand/5 rounded-full px-2.5 py-0.5">
-                      Featured
-                    </span>
-                    <span class={`text-xs font-medium rounded-full px-2.5 py-0.5 ${
-                      project.data.status === "Live"
-                        ? "text-emerald-700 bg-emerald-50"
-                        : "text-text-tertiary bg-gray-100"
-                    }`}>
-                      {project.data.status}
-                    </span>
+                  {/* Tech stack */}
+                  <div class="flex flex-wrap gap-2 mb-8">
+                    {project.data.tech.map((t: string) => (
+                      <span key={t} class="text-xs font-medium text-text-secondary bg-surface-alt border border-border px-3 py-1 rounded-md">
+                        {t}
+                      </span>
+                    ))}
                   </div>
-                  <h3 class="text-xl font-bold text-text-primary mb-1">{project.data.title}</h3>
-                  <p class="text-sm text-text-tertiary">{project.data.category}</p>
+                </div>
+
+                <!-- CTAs -->
+                <div class="flex flex-wrap gap-4 pt-4 border-t border-border/60">
+                  {project.data.url && (
+                    <a
+                      href={project.data.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-sm font-semibold text-text-primary hover:text-brand transition-colors"
+                    >
+                      Live Product
+                      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                    </a>
+                  )}
+                  {project.data.buttons?.map(btn => (
+                    btn.url && (
+                      <a
+                        key={btn.label}
+                        href={btn.url}
+                        target={btn.url.startsWith("http") ? "_blank" : "_self"}
+                        rel={btn.url.startsWith("http") ? "noopener noreferrer" : ""}
+                        class="inline-flex items-center gap-2 text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors"
+                      >
+                        {btn.label} &rarr;
+                      </a>
+                    )
+                  ))}
                 </div>
               </div>
 
-              <p class="text-text-secondary text-sm leading-relaxed mb-5">
-                {project.data.description}
-              </p>
-
-              {project.data.problem && (
-                <div class="mb-5 rounded-xl bg-surface-alt p-4">
-                  <p class="text-xs font-medium text-text-tertiary uppercase tracking-wide mb-1">The Challenge</p>
-                  <p class="text-sm text-text-secondary">{project.data.problem}</p>
-                </div>
-              )}
-
-              <div class="flex flex-wrap gap-1.5 mb-5">
-                {project.data.tech.map((t: string) => (
-                  <span class="text-xs font-medium text-text-secondary bg-gray-100 rounded-md px-2 py-1">
-                    {t}
-                  </span>
-                ))}
-              </div>
-
-              <div class="flex gap-3">
-                {project.data.url && (
-                  <a
-                    href={project.data.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1.5 text-sm font-medium text-brand hover:text-brand-dark transition-colors"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-                    Live Demo
-                  </a>
-                )}
-                {project.data.github && (
-                  <a
-                    href={project.data.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="inline-flex items-center gap-1.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-                    Source Code
-                  </a>
+              <!-- Right Image Showcase (7 cols) -->
+              <div class="lg:col-span-7">
+                {project.data.category === "iOS Mobile Application" && hasScreenshots ? (
+                  <div class="project-card-interactive bg-surface-alt rounded-2xl p-6 lg:p-8 border border-border flex justify-center items-center gap-4 overflow-hidden cursor-pointer">
+                    {project.data.screenshots!.slice(0, 3).map((src: string, idx: number) => (
+                      <div key={src} class={`relative rounded-xl overflow-hidden shadow-xl border border-gray-200 h-64 sm:h-80 w-auto transition-transform duration-500 ${idx === 1 ? "scale-105 z-10" : "scale-95 opacity-90"}`}>
+                        <img src={src} alt={`${project.data.title} screenshot ${idx+1}`} class="h-full w-auto object-contain" loading="lazy" />
+                      </div>
+                    ))}
+                  </div>
+                ) : mainImage ? (
+                  <div class="project-card-interactive project-img-container rounded-2xl border border-border shadow-lg overflow-hidden bg-gray-50 aspect-[16/10] cursor-pointer">
+                    <img
+                      src={mainImage}
+                      alt={`${project.data.title} visual`}
+                      class="w-full h-full object-cover object-top"
+                      loading="lazy"
+                    />
+                  </div>
+                ) : (
+                  <div class="project-card-interactive rounded-2xl border border-border bg-surface-alt p-8 aspect-[16/10] flex flex-col justify-center cursor-pointer">
+                    <p class="text-xs uppercase tracking-wider text-text-tertiary mb-2 font-semibold">Architectural Highlight</p>
+                    <p class="text-base text-text-secondary leading-relaxed">{project.data.problem}</p>
+                  </div>
                 )}
               </div>
             </div>
-          ))}
+          </div>
+        );
+      })}
+    </div>
+
+    <!-- Secondary Projects Directory -->
+    {secondary.length > 0 && (
+      <div class="mt-32 border-t border-border pt-16">
+        <div class="flex items-center justify-between mb-8">
+          <h3 class="text-xs font-semibold uppercase tracking-widest text-text-tertiary">
+            Additional Projects & Systems
+          </h3>
+          <span class="text-xs text-text-tertiary font-mono">{secondary.length} Projects</span>
         </div>
 
-        {/* Other personal projects */}
-        <div class="grid lg:grid-cols-2 gap-6 stagger">
-          {personalOthers.map((project) => (
-            <div class="fade-up rounded-2xl border border-border bg-white p-6 lg:p-8 hover:border-brand/20 hover:shadow-xl hover:shadow-brand/5 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
-              <div class="flex items-center gap-2 mb-3">
-                <span class={`text-xs font-medium rounded-full px-2.5 py-0.5 ${
-                  project.data.status === "Live"
-                    ? "text-emerald-700 bg-emerald-50"
-                    : "text-text-tertiary bg-gray-100"
-                }`}>
-                  {project.data.status}
+        <div class="divide-y divide-border border-b border-border">
+          {secondary.map((proj) => (
+            <div key={proj.data.title} class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-surface-alt/50 px-3 rounded-lg transition-colors duration-200">
+              <div class="flex items-center gap-4">
+                <span class="text-sm font-bold text-text-primary group-hover:text-brand transition-colors">
+                  {proj.data.title}
+                </span>
+                <span class="text-xs text-text-tertiary bg-surface-alt border border-border px-2.5 py-0.5 rounded-full">
+                  {proj.data.category}
                 </span>
               </div>
-              <h3 class="text-lg font-semibold text-text-primary mb-1">{project.data.title}</h3>
-              <p class="text-xs text-text-tertiary mb-3">{project.data.category}</p>
-              <p class="text-sm text-text-secondary leading-relaxed mb-4">
-                {project.data.description}
-              </p>
-              <div class="flex flex-wrap gap-1.5 mb-4">
-                {project.data.tech.slice(0, 4).map((t: string) => (
-                  <span class="text-xs text-text-secondary bg-gray-100 rounded-md px-2 py-0.5">
-                    {t}
-                  </span>
-                ))}
-              </div>
-              <div class="flex gap-3">
-                {project.data.url && (
-                  <a href={project.data.url} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-brand hover:text-brand-dark transition-colors">
-                    Live Demo →
+
+              <div class="flex items-center gap-6">
+                <span class="text-xs text-text-secondary hidden md:inline font-mono">
+                  {proj.data.tech.slice(0, 3).join(" · ")}
+                </span>
+                {proj.data.url ? (
+                  <a href={proj.data.url} target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-brand hover:text-brand-dark transition-colors">
+                    Visit &rarr;
                   </a>
-                )}
-                {project.data.github && (
-                  <a href={project.data.github} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors">
-                    Source →
+                ) : proj.data.github ? (
+                  <a href={proj.data.github} target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-text-secondary hover:text-text-primary transition-colors">
+                    Source &rarr;
                   </a>
+                ) : (
+                  <span class="text-xs text-text-tertiary">{proj.data.status}</span>
                 )}
               </div>
             </div>
@@ -274,3 +177,31 @@ const personalOthers = personal.filter((p) => !p.data.featured);
     )}
   </div>
 </section>
+
+<!-- Project Hover Follower Bubble -->
+<div id="project-cursor" class="project-cursor-follower font-display">View &rarr;</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.getElementById("project-cursor");
+    const imageCards = document.querySelectorAll(".project-card-interactive");
+
+    if (!cursor || !imageCards.length) return;
+
+    imageCards.forEach((card) => {
+      card.addEventListener("mousemove", (e: Event) => {
+        const mouseEvent = e as MouseEvent;
+        cursor.style.left = `${mouseEvent.clientX}px`;
+        cursor.style.top = `${mouseEvent.clientY}px`;
+      });
+
+      card.addEventListener("mouseenter", () => {
+        cursor.classList.add("is-active");
+      });
+
+      card.addEventListener("mouseleave", () => {
+        cursor.classList.remove("is-active");
+      });
+    });
+  });
+</script>
