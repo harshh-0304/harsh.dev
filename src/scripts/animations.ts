@@ -1,44 +1,10 @@
 import { animate, createTimeline, stagger } from "animejs";
 
 /**
- * Initializes entrance animations for Hero text & elements using anime.js v4
+ * Hero text animation removed as requested (renders statically without animation delay)
  */
 export function initHeroAnimation() {
-  const heroHeading = document.querySelector("#hero-heading");
-  if (!heroHeading) return;
-
-  // Hero entrance timeline
-  const tl = createTimeline({
-    defaults: {
-      ease: "outCubic",
-    },
-  });
-
-  tl.add("#hero-title-char", {
-    translateY: ["100%", "0%"],
-    opacity: [0, 1],
-    delay: stagger(40),
-    duration: 800,
-  })
-    .add(
-      "#hero-subheading",
-      {
-        translateY: [20, 0],
-        opacity: [0, 1],
-        duration: 700,
-      },
-      "-=400"
-    )
-    .add(
-      "#hero-meta > *",
-      {
-        translateY: [15, 0],
-        opacity: [0, 1],
-        delay: stagger(100),
-        duration: 600,
-      },
-      "-=300"
-    );
+  // No font animation on hero section
 }
 
 /**
