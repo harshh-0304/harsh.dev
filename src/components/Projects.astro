@@ -111,11 +111,11 @@ const secondary = allProjects.filter(p => !featured.includes(p));
                     ))}
                   </div>
                 ) : mainImage ? (
-                  <div class="project-card-interactive project-img-container rounded-2xl border border-border shadow-lg overflow-hidden bg-gray-50 aspect-[16/10] cursor-pointer">
+                  <div class="project-card-interactive project-img-container rounded-2xl border border-border shadow-lg overflow-hidden bg-slate-950 aspect-[16/10] cursor-pointer">
                     <img
                       src={mainImage}
                       alt={`${project.data.title} visual`}
-                      class="w-full h-full object-cover object-top"
+                      class="w-full h-full object-cover object-center"
                       loading="lazy"
                     />
                   </div>
