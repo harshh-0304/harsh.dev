@@ -57,12 +57,12 @@ export const services = [
 ];
 
 export const skills = {
-  Backend: ["NestJS", "Node.js", "Express.js", "Django", "ASP.NET Core", "Flask", "Clerk", "Python Scraper", "BeautifulSoup"],
+  Backend: ["NestJS", "Node.js", "Express.js", "Django", "ASP.NET Core", "Flask"],
   Languages: ["TypeScript", "Python", "JavaScript", "SQL", "C#"],
   "Databases & ORM": ["PostgreSQL", "MongoDB", "SQL Server", "Prisma", "Entity Framework"],
-  "Cloud & DevOps": ["AWS (EC2, S3)", "Git", "GitHub", "Docker", "Vercel", "Hostinger", "Netlify Hosting"],
-  "AI & ML": ["Prompt Engineering", "LangChain", "NLP Pipelines", "Speech Synthesis", "AI LLM Integration", "AI Plugins"],
-  Tools: ["Swagger / OpenAPI", "Postman", "React", "Tailwind CSS", "Canva", "Claude Code", "MCP", "Inline Email"],
+  "Cloud & DevOps": ["AWS (EC2, S3)", "Git", "GitHub", "Docker", "Vercel"],
+  "AI & ML": ["Prompt Engineering", "LangChain", "NLP Pipelines", "Speech Synthesis"],
+  Tools: ["Swagger / OpenAPI", "Postman", "React", "Tailwind CSS"],
 };
 
 export const education = [

@@ -1,6 +1,7 @@
 ---
 title: "Backend Engineer"
 company: "Betorra Gaming Platform"
+url: "https://dev.betorra.com/"
 period: "Jan 2026 – Present"
 type: "Full-Time"
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]

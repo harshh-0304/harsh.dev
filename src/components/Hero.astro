@@ -26,55 +26,26 @@ import { site } from "@/config/site";
           <span class="bg-gradient-to-r from-brand to-brand-light bg-clip-text text-transparent">that scale.</span>
         </h1>
 
-        <!-- Tabs Switcher -->
-        <div class="fade-up inline-flex items-center gap-1 rounded-xl border-2 border-text-primary bg-surface-alt p-1 shadow-[3px_3px_0px_0px_rgba(15,23,42,1)] mb-8">
-          <button
-            id="tab-firmsledger"
-            class="px-4 py-2 text-sm font-bold rounded-lg border-2 border-text-primary bg-brand text-white shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] transition-all duration-200 cursor-pointer"
-          >
-            FirmsLedger
-          </button>
-          <button
-            id="tab-betorra"
-            class="px-4 py-2 text-sm font-semibold rounded-lg border-2 border-transparent text-text-secondary hover:text-text-primary transition-all duration-200 cursor-pointer"
-          >
-            Betorra
-          </button>
-        </div>
-
         <!-- Description -->
-        <div id="content-firmsledger">
-          <p class="fade-up text-lg text-text-secondary leading-relaxed max-w-xl mb-10">
-            Backend Engineer shipping production systems — scalable REST APIs,
-            real-time transaction processing, and multi-provider integrations.
-            Currently building <strong class="text-text-primary font-semibold">FirmsLedger</strong>.
-          </p>
-        </div>
-        <div id="content-betorra" class="hidden">
-          <p class="text-lg text-text-secondary leading-relaxed max-w-xl mb-10">
-            Backend Engineer shipping production systems — scalable REST APIs,
-            real-time transaction processing, and multi-provider integrations.
-            Architected the backend for <strong class="text-text-primary font-semibold">Betorra</strong>.
-          </p>
-        </div>
+        <p class="fade-up text-lg text-text-secondary leading-relaxed max-w-xl mb-10">
+          Backend Engineer shipping production systems — scalable REST APIs,
+          real-time transaction processing, and multi-provider integrations.
+          Currently architecting backend services at <strong class="text-text-primary font-semibold">Betorra</strong>.
+        </p>
 
         <!-- Stats -->
-        <div class="fade-up flex flex-wrap gap-x-6 gap-y-4 sm:gap-x-8 items-center mb-10">
+        <div class="fade-up flex gap-10 mb-10">
           <div>
             <div class="text-3xl font-bold text-text-primary">1+</div>
             <div class="text-sm text-text-tertiary mt-0.5">Years Experience</div>
           </div>
-          <div class="w-px h-8 bg-border hidden sm:block"></div>
+          <div class="w-px bg-border"></div>
           <div>
             <div class="text-3xl font-bold text-text-primary">11+</div>
             <div class="text-sm text-text-tertiary mt-0.5">Projects Shipped</div>
           </div>
-          <div class="w-px h-8 bg-border hidden sm:block"></div>
-          <div id="stat-firmsledger">
-            <div class="text-3xl font-bold text-text-primary">5,000+</div>
-            <div class="text-sm text-text-tertiary mt-0.5">Verified Manufacturers</div>
-          </div>
-          <div id="stat-betorra" class="hidden">
+          <div class="w-px bg-border"></div>
+          <div>
             <div class="text-3xl font-bold text-text-primary">1,200+</div>
             <div class="text-sm text-text-tertiary mt-0.5">Games Integrated</div>
           </div>
@@ -84,21 +55,21 @@ import { site } from "@/config/site";
         <div class="fade-up flex flex-wrap gap-4">
           <a
             href="#projects"
-            class="neo-btn inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-medium text-white transition-all duration-200"
+            class="inline-flex items-center gap-2 rounded-xl bg-brand px-6 py-3 text-base font-medium text-white shadow-lg shadow-brand/25 hover:bg-brand-dark hover:shadow-xl hover:shadow-brand/30 hover:-translate-y-0.5 transition-all duration-200"
           >
             View my work
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
           </a>
           <a
             href="#contact"
-            class="neo-btn inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-medium text-text-primary transition-all duration-200"
+            class="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-base font-medium text-text-primary shadow-sm hover:bg-surface-alt hover:-translate-y-0.5 transition-all duration-200"
           >
             Get in touch
           </a>
           <a
             href={site.resumeUrl}
             download="Harsh_Jadav_Resume.pdf"
-            class="neo-btn inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 text-base font-medium text-text-secondary hover:text-text-primary transition-all duration-200"
+            class="inline-flex items-center gap-2 rounded-xl border border-border bg-white px-6 py-3 text-base font-medium text-text-secondary hover:text-text-primary hover:bg-surface-alt hover:-translate-y-0.5 transition-all duration-200"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Resume
@@ -127,43 +98,3 @@ import { site } from "@/config/site";
     </div>
   </div>
 </section>
-
-<script>
-  const tabFirmsledger = document.getElementById('tab-firmsledger');
-  const tabBetorra = document.getElementById('tab-betorra');
-  const contentFirmsledger = document.getElementById('content-firmsledger');
-  const contentBetorra = document.getElementById('content-betorra');
-  const statFirmsledger = document.getElementById('stat-firmsledger');
-  const statBetorra = document.getElementById('stat-betorra');
-
-  function switchTab(activeTab: 'firmsledger' | 'betorra') {
-    if (activeTab === 'firmsledger') {
-      tabFirmsledger?.classList.add('bg-brand', 'text-white', 'border-text-primary', 'shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]', 'font-bold');
-      tabFirmsledger?.classList.remove('border-transparent', 'text-text-secondary', 'font-semibold');
-      
-      tabBetorra?.classList.add('border-transparent', 'text-text-secondary', 'font-semibold');
-      tabBetorra?.classList.remove('bg-brand', 'text-white', 'border-text-primary', 'shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]', 'font-bold');
-
-      contentFirmsledger?.classList.remove('hidden');
-      contentBetorra?.classList.add('hidden');
-
-      statFirmsledger?.classList.remove('hidden');
-      statBetorra?.classList.add('hidden');
-    } else {
-      tabBetorra?.classList.add('bg-brand', 'text-white', 'border-text-primary', 'shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]', 'font-bold');
-      tabBetorra?.classList.remove('border-transparent', 'text-text-secondary', 'font-semibold');
-
-      tabFirmsledger?.classList.add('border-transparent', 'text-text-secondary', 'font-semibold');
-      tabFirmsledger?.classList.remove('bg-brand', 'text-white', 'border-text-primary', 'shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]', 'font-bold');
-
-      contentBetorra?.classList.remove('hidden');
-      contentFirmsledger?.classList.add('hidden');
-
-      statBetorra?.classList.remove('hidden');
-      statFirmsledger?.classList.add('hidden');
-    }
-  }
-
-  tabFirmsledger?.addEventListener('click', () => switchTab('firmsledger'));
-  tabBetorra?.addEventListener('click', () => switchTab('betorra'));
-</script>

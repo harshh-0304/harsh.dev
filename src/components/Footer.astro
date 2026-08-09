@@ -2,9 +2,9 @@
 import { site, navigation } from "@/config/site";
 ---
 
-<footer class="border-t-4 border-text-primary bg-surface-alt">
+<footer class="border-t border-border bg-surface-alt/50">
   <!-- CTA strip -->
-  <div class="border-b-2 border-text-primary">
+  <div class="border-b border-border">
     <div class="mx-auto max-w-6xl px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div>
         <h3 class="text-xl font-bold text-text-primary">Have a project in mind?</h3>
@@ -13,7 +13,7 @@ import { site, navigation } from "@/config/site";
       <div class="flex gap-3">
         <a
           href="#contact"
-          class="neo-btn inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors"
+          class="inline-flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-brand-dark transition-colors"
         >
           Get in touch
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
@@ -21,7 +21,7 @@ import { site, navigation } from "@/config/site";
         <a
           href={site.resumeUrl}
           download="Harsh_Jadav_Resume.pdf"
-          class="neo-btn inline-flex items-center gap-2 rounded-lg bg-white px-5 py-2.5 text-sm font-medium text-text-primary transition-colors"
+          class="inline-flex items-center gap-2 rounded-lg border border-border bg-white px-5 py-2.5 text-sm font-medium text-text-secondary hover:text-text-primary transition-colors"
         >
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
           Resume
@@ -38,7 +38,7 @@ import { site, navigation } from "@/config/site";
         <a href="/" class="text-lg font-semibold tracking-tight text-text-primary">
           {site.name}<span class="text-brand">.</span>
         </a>
-        <p class="text-sm text-text-secondary mt-2 leading-relaxed font-medium">
+        <p class="text-sm text-text-tertiary mt-2 leading-relaxed">
           Backend Engineer building scalable systems and full-stack applications for businesses.
         </p>
       </div>
@@ -46,13 +46,13 @@ import { site, navigation } from "@/config/site";
       <!-- Links -->
       <div class="flex gap-14">
         <div>
-          <p class="text-xs font-bold text-text-primary uppercase tracking-wider mb-3">Navigation</p>
+          <p class="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">Navigation</p>
           <div class="flex flex-col gap-2">
             {
               navigation.map((item) => (
                 <a
                   href={item.href}
-                  class="text-sm text-text-secondary hover:text-brand transition-colors font-medium"
+                  class="text-sm text-text-tertiary hover:text-text-primary transition-colors"
                 >
                   {item.label}
                 </a>
@@ -61,21 +61,21 @@ import { site, navigation } from "@/config/site";
           </div>
         </div>
         <div>
-          <p class="text-xs font-bold text-text-primary uppercase tracking-wider mb-3">Connect</p>
-          <div class="flex flex-col gap-2 font-medium">
-            <a href={`mailto:${site.email}`} class="text-sm text-text-secondary hover:text-brand transition-colors">Email</a>
-            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-text-secondary hover:text-brand transition-colors">LinkedIn</a>
-            <a href={site.github} target="_blank" rel="noopener noreferrer" class="text-sm text-text-secondary hover:text-brand transition-colors">GitHub</a>
+          <p class="text-xs font-semibold text-text-primary uppercase tracking-wider mb-3">Connect</p>
+          <div class="flex flex-col gap-2">
+            <a href={`mailto:${site.email}`} class="text-sm text-text-tertiary hover:text-text-primary transition-colors">Email</a>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">LinkedIn</a>
+            <a href={site.github} target="_blank" rel="noopener noreferrer" class="text-sm text-text-tertiary hover:text-text-primary transition-colors">GitHub</a>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="border-t-2 border-text-primary pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
-      <p class="text-xs text-text-secondary font-medium">
+    <div class="border-t border-border pt-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <p class="text-xs text-text-tertiary">
         &copy; {new Date().getFullYear()} {site.name}. All rights reserved.
       </p>
-      <p class="text-xs text-text-secondary font-medium">
+      <p class="text-xs text-text-tertiary">
         Built with Astro & Tailwind CSS
       </p>
     </div>

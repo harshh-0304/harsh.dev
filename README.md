@@ -17,11 +17,9 @@
 
 ## About Me
 
-Backend Engineer with production experience building B2B directories, scalable REST APIs, transaction processing systems, and third-party provider integrations.
+Backend Engineer with production experience building scalable REST APIs, transaction processing systems, and third-party provider integrations.
 
-Designed and developed **[FirmsLedger](https://www.firmsledger.com)** — a transparent B2B USA manufacturing directory verifying **5,000+ manufacturers across 50 states and 15 categories** — implementing parallel data ingestion pipelines, PostgreSQL optimizations, and custom filtering systems.
-
-Also architected the backend for Betorra — a multi-provider gaming platform integrating **1,200+ games across 4 external providers** — handling wallet callbacks, idempotent transactions, session management, and provider certification support in an AWS-hosted environment.
+Designed and developed the backend for **[Betorra](https://dev.betorra.com/)** — a multi-provider gaming platform integrating **1,200+ games across 4 external providers** — handling wallet callbacks, idempotent transactions, session management, and provider certification support in an AWS-hosted environment.
 
 Previously worked as an AI Engineer at **DubFlix**, building multilingual NLP pipelines for AI-powered dubbing workflows.
 
@@ -39,7 +37,7 @@ Previously worked as an AI Engineer at **DubFlix**, building multilingual NLP pi
 ### Backend Engineer — Betorra Gaming Platform
 > **Jan 2026 – Present** · NestJS · TypeScript · PostgreSQL · Prisma ORM · AWS
 
-Betorra is a multi-provider gaming platform. I was responsible for designing and building the backend from the ground up.
+**[Betorra](https://dev.betorra.com/)** is a multi-provider gaming platform. I was responsible for designing and building the backend from the ground up.
 
 - Integrated **1,200+ games** across **4 external gaming providers** with a production-ready backend
 - Designed a **modular monolith architecture** with clear domain separation — games, sessions, balances, transactions, providers, and admin modules
@@ -76,14 +74,7 @@ Betorra is a multi-provider gaming platform. I was responsible for designing and
 
 ## 🚀 Featured Projects
 
-### [FirmsLedger](https://www.firmsledger.com) — Full-Stack & Data Engineer
-> React · TypeScript · Node.js · Python · PostgreSQL · Tailwind CSS
-
-A transparent, unbiased USA manufacturing directory featuring over 5,000+ verified manufacturers. Built a high-throughput, parallel data ingestion and verification pipeline to aggregate supplier details, optimized PostgreSQL queries, and implemented state and category-wide filtering.
-
----
-
-### Betorra Gaming Platform — Backend Engineer
+### [Betorra Gaming Platform](https://dev.betorra.com/) — Backend Engineer
 > NestJS · TypeScript · PostgreSQL · Prisma ORM · AWS · REST APIs
 
 Production backend for a multi-provider gaming platform. Modular monolith architecture supporting 1,200+ games across 4 providers — including wallet callbacks, session management, transaction processing, and provider certification support.

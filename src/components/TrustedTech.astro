@@ -2,15 +2,15 @@
 import { trustedTech } from "@/config/site";
 ---
 
-<section class="py-14 border-y-4 border-text-primary bg-surface-alt">
+<section class="py-14 border-y border-border bg-surface-alt/80">
   <div class="mx-auto max-w-6xl px-6">
-    <p class="text-center text-xs text-text-secondary mb-8 tracking-widest uppercase font-bold">
-      Trusted Technologies
+    <p class="text-center text-xs text-text-tertiary mb-8 tracking-widest uppercase font-medium">
+      Technologies I work with
     </p>
     <div class="flex flex-wrap justify-center gap-x-8 gap-y-3">
       {
         trustedTech.map((tech) => (
-          <span class="text-base font-bold text-text-primary hover:text-brand transition-colors duration-200 cursor-default">
+          <span class="text-base font-medium text-text-secondary/60 hover:text-brand transition-colors duration-200 cursor-default">
             {tech}
           </span>
         ))
