@@ -36,6 +36,9 @@ const secondary = allProjects.filter(p => !featured.includes(p));
         const hasScreenshots = project.data.screenshots && project.data.screenshots.length > 0;
         const mainImage = project.data.image || (hasScreenshots ? project.data.screenshots[0] : null);
 
+        const targetUrl = project.data.url || project.data.github || project.data.buttons?.find(b => b.url)?.url || (project.data.professional ? `/projects/${project.id}` : undefined);
+        const isExternal = targetUrl?.startsWith("http");
+
         return (
           <div key={project.data.title} class="group border-t border-border pt-12 lg:pt-16">
             <!-- Project Row -->
@@ -51,7 +54,13 @@ const secondary = allProjects.filter(p => !featured.includes(p));
                   </div>
 
                   <h3 class="text-3xl sm:text-4xl font-extrabold text-text-primary tracking-tight mb-3 group-hover:text-brand transition-colors duration-300">
-                    {project.data.title}
+                    {targetUrl ? (
+                      <a href={targetUrl} target={isExternal ? "_blank" : "_self"} rel={isExternal ? "noopener noreferrer" : ""} class="hover:underline">
+                        {project.data.title}
+                      </a>
+                    ) : (
+                      project.data.title
+                    )}
                   </h3>
                   <p class="text-xs font-semibold uppercase tracking-wider text-text-tertiary mb-6">
                     {project.data.category}
@@ -84,6 +93,16 @@ const secondary = allProjects.filter(p => !featured.includes(p));
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                     </a>
                   )}
+                  {project.data.github && (
+                    <a
+                      href={project.data.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-2 text-sm font-semibold text-text-secondary hover:text-text-primary transition-colors"
+                    >
+                      GitHub &rarr;
+                    </a>
+                  )}
                   {project.data.buttons?.map(btn => (
                     btn.url && (
                       <a
@@ -102,27 +121,63 @@ const secondary = allProjects.filter(p => !featured.includes(p));
 
               <!-- Right Image Showcase (7 cols) -->
               <div class="lg:col-span-7">
-                {project.data.category === "iOS Mobile Application" && hasScreenshots ? (
-                  <div class="project-card-interactive bg-surface-alt rounded-2xl p-6 lg:p-8 border border-border flex justify-center items-center gap-4 overflow-hidden cursor-pointer">
-                    {project.data.screenshots!.slice(0, 3).map((src: string, idx: number) => (
-                      <div key={src} class={`relative rounded-xl overflow-hidden shadow-xl border border-gray-200 h-64 sm:h-80 w-auto transition-transform duration-500 ${idx === 1 ? "scale-105 z-10" : "scale-95 opacity-90"}`}>
-                        <img src={src} alt={`${project.data.title} screenshot ${idx+1}`} class="h-full w-auto object-contain" loading="lazy" />
+                {targetUrl ? (
+                  <a
+                    href={targetUrl}
+                    target={isExternal ? "_blank" : "_self"}
+                    rel={isExternal ? "noopener noreferrer" : ""}
+                    class="block rounded-2xl border border-border shadow-lg overflow-hidden transition-all duration-300 hover:border-brand/50 hover:shadow-2xl group/img cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand/40"
+                    title={`Open ${project.data.title}`}
+                  >
+                    {project.data.category === "iOS Mobile Application" && hasScreenshots ? (
+                      <div class="bg-surface-alt p-6 lg:p-8 flex justify-center items-center gap-4 overflow-hidden">
+                        {project.data.screenshots!.slice(0, 3).map((src: string, idx: number) => (
+                          <div key={src} class={`relative rounded-xl overflow-hidden shadow-xl border border-gray-200 h-64 sm:h-80 w-auto transition-transform duration-500 group-hover/img:scale-105 ${idx === 1 ? "scale-105 z-10" : "scale-95 opacity-90"}`}>
+                            <img src={src} alt={`${project.data.title} screenshot ${idx+1}`} class="h-full w-auto object-contain" loading="lazy" />
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                ) : mainImage ? (
-                  <div class="project-card-interactive project-img-container rounded-2xl border border-border shadow-lg overflow-hidden bg-slate-950 aspect-[16/10] cursor-pointer">
-                    <img
-                      src={mainImage}
-                      alt={`${project.data.title} visual`}
-                      class="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                  </div>
+                    ) : mainImage ? (
+                      <div class="project-img-container bg-slate-950 aspect-[16/10]">
+                        <img
+                          src={mainImage}
+                          alt={`${project.data.title} visual`}
+                          class="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover/img:scale-105"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div class="bg-surface-alt p-8 aspect-[16/10] flex flex-col justify-center">
+                        <p class="text-xs uppercase tracking-wider text-text-tertiary mb-2 font-semibold">Architectural Highlight</p>
+                        <p class="text-base text-text-secondary leading-relaxed">{project.data.problem}</p>
+                      </div>
+                    )}
+                  </a>
                 ) : (
-                  <div class="project-card-interactive rounded-2xl border border-border bg-surface-alt p-8 aspect-[16/10] flex flex-col justify-center cursor-pointer">
-                    <p class="text-xs uppercase tracking-wider text-text-tertiary mb-2 font-semibold">Architectural Highlight</p>
-                    <p class="text-base text-text-secondary leading-relaxed">{project.data.problem}</p>
+                  <div class="rounded-2xl border border-border shadow-lg overflow-hidden">
+                    {project.data.category === "iOS Mobile Application" && hasScreenshots ? (
+                      <div class="bg-surface-alt p-6 lg:p-8 flex justify-center items-center gap-4 overflow-hidden">
+                        {project.data.screenshots!.slice(0, 3).map((src: string, idx: number) => (
+                          <div key={src} class={`relative rounded-xl overflow-hidden shadow-xl border border-gray-200 h-64 sm:h-80 w-auto transition-transform duration-500 ${idx === 1 ? "scale-105 z-10" : "scale-95 opacity-90"}`}>
+                            <img src={src} alt={`${project.data.title} screenshot ${idx+1}`} class="h-full w-auto object-contain" loading="lazy" />
+                          </div>
+                        ))}
+                      </div>
+                    ) : mainImage ? (
+                      <div class="project-img-container bg-slate-950 aspect-[16/10]">
+                        <img
+                          src={mainImage}
+                          alt={`${project.data.title} visual`}
+                          class="w-full h-full object-cover object-center"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <div class="bg-surface-alt p-8 aspect-[16/10] flex flex-col justify-center">
+                        <p class="text-xs uppercase tracking-wider text-text-tertiary mb-2 font-semibold">Architectural Highlight</p>
+                        <p class="text-base text-text-secondary leading-relaxed">{project.data.problem}</p>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
@@ -177,31 +232,3 @@ const secondary = allProjects.filter(p => !featured.includes(p));
     )}
   </div>
 </section>
-
-<!-- Project Hover Follower Bubble -->
-<div id="project-cursor" class="project-cursor-follower font-display">View &rarr;</div>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const cursor = document.getElementById("project-cursor");
-    const imageCards = document.querySelectorAll(".project-card-interactive");
-
-    if (!cursor || !imageCards.length) return;
-
-    imageCards.forEach((card) => {
-      card.addEventListener("mousemove", (e: Event) => {
-        const mouseEvent = e as MouseEvent;
-        cursor.style.left = `${mouseEvent.clientX}px`;
-        cursor.style.top = `${mouseEvent.clientY}px`;
-      });
-
-      card.addEventListener("mouseenter", () => {
-        cursor.classList.add("is-active");
-      });
-
-      card.addEventListener("mouseleave", () => {
-        cursor.classList.remove("is-active");
-      });
-    });
-  });
-</script>
