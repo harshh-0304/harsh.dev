@@ -4,9 +4,9 @@ category: "Business Platform"
 description: "Modern business platform with a clean user experience designed to simplify business acquisition operations through an intuitive dashboard, deal management, broker tools, and streamlined onboarding."
 tech: []
 url: "https://bizbuybox.vercel.app/"
-image: "/projects/bizbuybox/landing.png"
+image: "/projects/bizbuybox/bbb-cover.png"
 screenshots:
-  - "/projects/bizbuybox/landing.png"
+  - "/projects/bizbuybox/bbb-cover.png"
   - "/projects/bizbuybox/dashboard.png"
   - "/projects/bizbuybox/deals.png"
   - "/projects/bizbuybox/brokers.png"

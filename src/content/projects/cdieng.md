@@ -4,9 +4,9 @@ category: "Corporate Website"
 description: "Professional corporate website developed for an engineering company with a modern, responsive interface focused on presenting company services, capabilities, project portfolio, and business information in a clear and professional manner."
 tech: []
 url: "https://cdieng.vercel.app/"
-image: "/projects/cdieng/homepage.png"
+image: "/projects/cdieng/cdi-cover.png"
 screenshots:
-  - "/projects/cdieng/homepage.png"
+  - "/projects/cdieng/cdi-cover.png"
   - "/projects/cdieng/services.png"
   - "/projects/cdieng/about.png"
   - "/projects/cdieng/clients.png"
