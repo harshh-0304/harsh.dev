@@ -12,7 +12,7 @@ import { site, navigation } from "@/config/site";
         <span class="text-xs text-text-tertiary ml-3">Software Engineer</span>
       </div>
 
-      <div class="flex items-center gap-6 text-xs font-semibold uppercase tracking-wider text-text-tertiary">
+      <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-xs font-semibold uppercase tracking-wider text-text-tertiary">
         {navigation.map((item) => (
           <a key={item.label} href={item.href} class="hover:text-text-primary transition-colors">
             {item.label}

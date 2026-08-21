@@ -200,11 +200,11 @@ const secondary = allProjects.filter(p => !featured.includes(p));
         <div class="divide-y divide-border border-b border-border">
           {secondary.map((proj) => (
             <div key={proj.data.title} class="py-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 group hover:bg-surface-alt/50 px-3 rounded-lg transition-colors duration-200">
-              <div class="flex items-center gap-4">
+              <div class="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-4">
                 <span class="text-sm font-bold text-text-primary group-hover:text-brand transition-colors">
                   {proj.data.title}
                 </span>
-                <span class="text-xs text-text-tertiary bg-surface-alt border border-border px-2.5 py-0.5 rounded-full">
+                <span class="text-xs text-text-tertiary bg-surface-alt border border-border px-2.5 py-0.5 rounded-full w-fit">
                   {proj.data.category}
                 </span>
               </div>
