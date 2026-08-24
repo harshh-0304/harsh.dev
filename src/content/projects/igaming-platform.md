@@ -1,11 +1,11 @@
 ---
-title: "Betorra Gaming Platform"
+title: "iGaming Platform"
 category: "Gaming Backend Platform"
 description: "Production backend for a multi-provider gaming platform — architected services supporting 1,200+ games with real-time session management, multi-provider wallet operations, and idempotent transaction processing."
 problem: "A gaming platform needed a unified backend to integrate multiple external gaming providers, each with different APIs, while maintaining transaction consistency and real-time session management at scale."
 solution: "Built a modular monolith backend with NestJS supporting 1,200+ games across 4 certified providers. Implemented idempotent transaction handling, secure callback validation, and reconciliation pipelines."
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
-image: "/projects/betorra/dashboard.png"
+image: "/projects/igaming-platform/dashboard.png"
 featured: true
 professional: true
 order: 2
