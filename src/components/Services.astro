@@ -19,13 +19,13 @@ import { services } from "@/config/site";
     </div>
 
     <!-- 3 Core Capabilities Editorial Row -->
-    <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 divide-y lg:divide-y-0 lg:divide-x divide-border pt-4">
+    <div class="grid lg:grid-cols-3 gap-8 lg:gap-12 divide-y lg:divide-y-0 lg:divide-x divide-border/80 pt-4">
       {services.map((service, idx) => (
-        <div key={service.title} class={`pt-8 lg:pt-0 ${idx !== 0 ? "lg:pl-10" : ""}`} data-reveal="fade-up" data-reveal-delay={idx * 150}>
-          <span class="text-3xl font-extrabold text-brand tracking-tighter block mb-4">
+        <div key={service.title} class={`pt-8 lg:pt-0 ${idx !== 0 ? "lg:pl-10" : ""} group`} data-reveal="fade-up" data-reveal-delay={idx * 150}>
+          <span class="text-3xl font-extrabold text-brand tracking-tighter block mb-4 group-hover:scale-110 origin-left transition-transform">
             {service.number}
           </span>
-          <h3 class="text-2xl font-bold text-text-primary mb-3">
+          <h3 class="text-2xl font-bold text-text-primary mb-3 group-hover:text-brand transition-colors">
             {service.title}
           </h3>
           <p class="text-sm text-text-secondary leading-relaxed">
