@@ -7,6 +7,8 @@
 🌐 Portfolio: https://harsh-jadav.vercel.app
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-Live_Website-00C7B7?style=for-the-badge&logo=vercel&logoColor=white)](https://harsh-jadav.vercel.app)
+[![Astro](https://img.shields.io/badge/Astro-v7.1-FF5D01?style=for-the-badge&logo=astro&logoColor=white)](https://astro.build)
+[![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4.3-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/harshh33)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/harshh-0304)
 [![Email](https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:bakasakuta33@gmail.com)
