@@ -58,22 +58,23 @@ import { site, navigation } from "@/config/site";
   <!-- Mobile Menu -->
   <div
     id="mobile-menu"
-    class="hidden md:hidden border-t border-border bg-white/95 backdrop-blur-md"
+    class="hidden md:hidden border-t border-border/60 bg-white/98 backdrop-blur-lg shadow-lg transition-all"
   >
     <div class="px-6 py-4 flex flex-col gap-3">
       {
         navigation.map((item) => (
           <a
             href={item.href}
-            class="mobile-nav-link text-base text-text-secondary hover:text-text-primary py-2 transition-colors"
+            class="mobile-nav-link text-base font-medium text-text-secondary hover:text-brand py-2 transition-colors flex items-center justify-between"
           >
-            {item.label}
+            <span>{item.label}</span>
+            <span class="text-xs text-text-muted">&rarr;</span>
           </a>
         ))
       }
       <a
         href="#contact"
-        class="mobile-nav-link mt-2 inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-medium text-white"
+        class="mobile-nav-link mt-2 inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand/90 transition-all"
       >
         Get in touch
       </a>
