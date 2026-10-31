@@ -6,7 +6,7 @@ problem: "A critical 'discourage search engines' misconfiguration completely hid
 solution: "Diagnosed and resolved indexing blockers, engineered custom child-theme PHP optimizations, built automated Python and Playwright content extraction workflows, and achieved a perfect 100/100 Ubersuggest audit score."
 tech: ["WordPress", "PHP", "Playwright", "Python", "Yoast SEO", "Google Search Console", "Google Analytics 4"]
 url: "https://wearetag.ai"
-order: 10
+order: 8
 status: "Live"
 featured: false
 professional: true

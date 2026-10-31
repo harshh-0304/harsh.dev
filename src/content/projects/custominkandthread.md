@@ -8,7 +8,7 @@ tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4", "Supabase Postg
 url: "https://www.custominkandthread.com"
 featured: false
 professional: true
-order: 4
+order: 5
 status: "Live"
 buttons:
   - label: "Live Store"

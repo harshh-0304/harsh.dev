@@ -16,7 +16,7 @@ screenshots:
   - "/projects/hmd/hmd-7.png"
 featured: false
 professional: true
-order: 11
+order: 6
 status: "Live"
 buttons:
   - label: "Live Platform"

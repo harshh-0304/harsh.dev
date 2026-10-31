@@ -15,7 +15,7 @@ screenshots:
   - "/projects/cyber7/screen-8.jpg"
 featured: false
 professional: true
-order: 10
+order: 13
 status: "Completed"
 buttons:
   - label: "View Details"

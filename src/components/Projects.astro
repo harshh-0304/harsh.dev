@@ -40,6 +40,15 @@ for (const project of allProjects) {
     secondary.push(project);
   }
 }
+
+// Projects with live working URLs appear first in the directory;
+// offline/internal systems without live links appear below.
+secondary.sort((a, b) => {
+  const aHasUrl = Boolean(a.data.url && a.data.url.startsWith("http"));
+  const bHasUrl = Boolean(b.data.url && b.data.url.startsWith("http"));
+  if (aHasUrl !== bHasUrl) return aHasUrl ? -1 : 1;
+  return a.data.order - b.data.order;
+});
 ---
 
 <section id="projects" class="py-24 lg:py-32 bg-surface relative">

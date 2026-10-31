@@ -9,7 +9,7 @@ url: "https://www.firmsledger.com/"
 image: "/projects/firmsledger/landing.png"
 featured: true
 professional: true
-order: 1
+order: 2
 status: "Live"
 buttons:
   - label: "Live Website"

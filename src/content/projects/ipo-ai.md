@@ -5,7 +5,7 @@ description: "'Know before you invest' — Android app helping Indian retail inv
 problem: "Retail investors in India face fragmented and speculative IPO sources that often publish fabricated financial projections or unsubstantiated listing day gains."
 solution: "Built a React Native (Expo SDK 54) Android application backed by a Cloudflare Workers serverless AI proxy and deterministic 12-factor fundamental scoring engine that strictly displays verified financial data and prospectuses."
 tech: ["React Native", "Expo SDK 54", "TypeScript", "Cloudflare Workers", "Workers KV", "Groq AI", "AsyncStorage", "EAS Build"]
-order: 8
+order: 12
 status: "Built"
 featured: false
 professional: true

@@ -6,8 +6,8 @@ problem: "Existing voice assistants rely on expensive cloud APIs and lack privac
 solution: "Built a complete voice assistant pipeline using open-source models — Groq Whisper for speech recognition, Llama 3.3 for intelligence, and gTTS for responses."
 tech: ["Python", "Groq Whisper", "Llama 3.3", "gTTS", "PyAudio"]
 github: "https://github.com/harshh-0304/VoiceDesk"
-featured: true
-order: 3
+featured: false
+order: 14
 status: "Built"
 ---
 

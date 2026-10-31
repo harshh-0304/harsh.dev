@@ -13,7 +13,7 @@ screenshots:
   - "/projects/bizbuybox/signup.png"
 featured: false
 professional: true
-order: 13
+order: 9
 status: "Live"
 buttons:
   - label: "Visit Website"

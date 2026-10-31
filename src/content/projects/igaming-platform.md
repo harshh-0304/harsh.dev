@@ -8,7 +8,7 @@ tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
 image: "/projects/igaming-platform/dashboard.png"
 featured: false
 professional: true
-order: 5
+order: 11
 status: "Completed"
 ---
 

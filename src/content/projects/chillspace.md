@@ -6,8 +6,8 @@ problem: "Property owners needed a simple, reliable platform to list rentals and
 solution: "Built a complete MERN stack marketplace with booking workflows, payment integration, and a clean user experience deployed on Vercel."
 tech: ["React", "Node.js", "MongoDB", "Express", "JWT", "Payment Integration"]
 url: "https://chilspace.vercel.app"
-featured: true
-order: 2
+featured: false
+order: 10
 status: "Live"
 ---
 

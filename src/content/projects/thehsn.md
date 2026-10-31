@@ -6,7 +6,7 @@ problem: "A critical community healthcare provider in Los Angeles was held back 
 solution: "Rebuilt the platform using Astro 7 SSR with React 19 islands, implemented custom middleware for security headers and compression, structured JSON-LD schemas for local business, and verified 135+ Playwright E2E tests."
 tech: ["Astro 7", "React 19", "NestJS", "TypeScript", "Tailwind CSS", "Playwright", "Caddy", "Google Tag Manager"]
 url: "https://thehsn.net"
-order: 9
+order: 7
 status: "Live"
 featured: false
 professional: true

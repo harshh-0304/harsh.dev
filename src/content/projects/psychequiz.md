@@ -5,13 +5,21 @@ description: "Flask-based mental health assessment platform with ML-powered emot
 problem: "Mental health assessment tools are often clinical and inaccessible. There was a need for an approachable, data-driven platform that provides meaningful insights."
 solution: "Built an ML-driven assessment platform with Flask, featuring dynamic scoring, classification algorithms, and privacy-focused design."
 tech: ["Python", "Flask", "Machine Learning", "scikit-learn", "REST APIs"]
-url: "https://psyche-quiz.onrender.com/"
-featured: true
-order: 5
-status: "Live"
+github: "https://github.com/harshh-0304/psyche-quiz"
+featured: false
+professional: false
+order: 16
+status: "Completed"
+buttons:
+  - label: "Source Code"
+    url: "https://github.com/harshh-0304/psyche-quiz"
+    style: "primary"
+  - label: "View Details"
+    url: "/projects/psychequiz"
+    style: "secondary"
 ---
 
 - ML-driven emotional analysis
-- Dynamic scoring and classification
+- Dynamic scoring and classification algorithms
 - Flask REST API backend
-- Data privacy controls
+- Privacy-focused design with no persistent storage of personal evaluations

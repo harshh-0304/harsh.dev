@@ -3,7 +3,6 @@ title: "CDI Engineering"
 category: "Corporate Website"
 description: "Professional corporate website developed for an engineering company with a modern, responsive interface focused on presenting company services, capabilities, project portfolio, and business information in a clear and professional manner."
 tech: ["React", "TypeScript", "Tailwind CSS", "Vercel"]
-url: "https://cdieng.vercel.app/"
 image: "/projects/cdieng/cdi-cover.png"
 screenshots:
   - "/projects/cdieng/cdi-cover.png"
@@ -13,12 +12,9 @@ screenshots:
   - "/projects/cdieng/contact.png"
 featured: false
 professional: true
-order: 12
-status: "Live"
+order: 19
+status: "Completed"
 buttons:
-  - label: "Visit Website"
-    url: "https://cdieng.vercel.app/"
-    style: "primary"
   - label: "View Details"
     url: "/projects/cdieng"
     style: "secondary"
