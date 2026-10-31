@@ -4,7 +4,7 @@ company: "DubFlix"
 period: "Jun 2025 – Dec 2025"
 type: "Contract"
 tech: ["Python", "NLP", "Speech Synthesis", "AI/ML"]
-order: 2
+order: 3
 ---
 
 - Optimised multilingual **NLP processing pipelines** supporting AI-powered dubbing workflows across 5+ target languages

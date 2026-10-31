@@ -44,15 +44,11 @@ import { site } from "@/config/site";
       <!-- Right Column: Form (7 cols) -->
       <div class="lg:col-span-7" data-reveal="fade-up" data-reveal-delay="150">
         <form
-          action="https://api.web3forms.com/submit"
-          method="POST"
-          class="space-y-5 bg-surface-alt p-8 sm:p-10 rounded-2xl border border-border/80 shadow-md hover:shadow-lg transition-all"
           id="contact-form"
+          class="space-y-5 bg-surface-alt p-8 sm:p-10 rounded-2xl border border-border/80 shadow-md hover:shadow-lg transition-all"
         >
-          <input type="hidden" name="access_key" value="13179078-8114-46b7-a4c5-4ac3689d1639" />
-          <input type="hidden" name="subject" value="New message from portfolio" />
-          <input type="hidden" name="from_name" value="Portfolio Contact Form" />
-          <input type="hidden" name="redirect" value="https://web3forms.com/success" />
+          <!-- Status Banner for Feedback -->
+          <div id="form-status" class="hidden p-4 rounded-xl text-sm transition-all"></div>
 
           <div class="grid sm:grid-cols-2 gap-4">
             <div>
@@ -93,9 +89,16 @@ import { site } from "@/config/site";
 
           <button
             type="submit"
-            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-text-primary px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-brand hover:shadow-brand/20 transition-all duration-300 cursor-pointer"
+            id="submit-btn"
+            class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-text-primary px-8 py-3.5 text-sm font-semibold text-white shadow-lg hover:bg-black hover:scale-[1.02] active:scale-98 transition-all duration-200 cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Send Message &rarr;
+            <span id="btn-text">Send Message &rarr;</span>
+            <span id="btn-spinner" class="hidden">
+              <svg class="animate-spin h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+            </span>
           </button>
         </form>
       </div>
@@ -103,3 +106,92 @@ import { site } from "@/config/site";
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement | null;
+  const statusBox = document.getElementById("form-status");
+  const submitBtn = document.getElementById("submit-btn") as HTMLButtonElement | null;
+  const btnText = document.getElementById("btn-text");
+  const btnSpinner = document.getElementById("btn-spinner");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      if (!statusBox || !submitBtn || !btnText || !btnSpinner) return;
+
+      const formData = new FormData(form);
+      const name = formData.get("name")?.toString().trim();
+      const email = formData.get("email")?.toString().trim();
+      const message = formData.get("message")?.toString().trim();
+
+      if (!name || !email || !message) {
+        showStatus("error", "Please fill in all fields before sending.");
+        return;
+      }
+
+      // UI: Loading state
+      submitBtn.disabled = true;
+      btnText.textContent = "Sending...";
+      btnSpinner.classList.remove("hidden");
+      statusBox.classList.add("hidden");
+
+      try {
+        const res = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ name, email, message }),
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success) {
+          form.reset();
+          showStatus(
+            "success",
+            "Thank you! Your message was sent successfully. I'll get back to you shortly."
+          );
+        } else {
+          showStatus(
+            "error",
+            data.error || "An error occurred while sending your message. Please try again or email me directly."
+          );
+        }
+      } catch (err) {
+        showStatus(
+          "error",
+          "Network error. Please check your connection or email me directly."
+        );
+      } finally {
+        submitBtn.disabled = false;
+        btnText.textContent = "Send Message \u2192";
+        btnSpinner.classList.add("hidden");
+      }
+    });
+  }
+
+  function showStatus(type: "success" | "error", message: string) {
+    if (!statusBox) return;
+    statusBox.classList.remove("hidden", "bg-emerald-50", "text-emerald-800", "border-emerald-200", "bg-rose-50", "text-rose-800", "border-rose-200");
+    
+    if (type === "success") {
+      statusBox.className = "p-4 rounded-xl text-sm border bg-emerald-50 text-emerald-800 border-emerald-200 flex items-center gap-2";
+      statusBox.innerHTML = `
+        <svg class="w-5 h-5 text-emerald-600 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+        </svg>
+        <span>${message}</span>
+      `;
+    } else {
+      statusBox.className = "p-4 rounded-xl text-sm border bg-rose-50 text-rose-800 border-rose-200 flex items-center gap-2";
+      statusBox.innerHTML = `
+        <svg class="w-5 h-5 text-rose-600 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+          <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
+        </svg>
+        <span>${message}</span>
+      `;
+    }
+  }
+</script>

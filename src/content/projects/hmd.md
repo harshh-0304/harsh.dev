@@ -1,25 +1,25 @@
 ---
-title: "HMD"
-category: "Medical Education SaaS"
-description: "Premium medical education platform delivering elite physician training, evidence-based programs, and physician-executive development. Features structured curricula, a clinical research library, peer collaboration hub, and an AI-powered CV builder for medical professionals worldwide."
-tech: ["Next.js", "React", "TypeScript", "Supabase", "Tailwind CSS", "Vercel"]
+title: "HMD Campus & iConnect"
+category: "Verified-Physician Network & EdTech"
+description: "Verified-physician learning and clinical networking platform featuring board-prep question banks, automated medical feeds across 21 specialties, Microsoft Teams video meetings, and Supabase RLS architectures."
+problem: "Physicians require a secure, credential-verified network to discuss clinical evidence, join accredited Journal Clubs, and track regulatory updates without non-medical noise or data leaks."
+solution: "Built a verified-physician ecosystem on Next.js 16 and Supabase with NPI credential verification, automated 4-hour ingestion pipelines across PubMed and openFDA, and Microsoft Graph Teams integration."
+tech: ["Next.js 16", "React 19", "TypeScript", "Supabase", "Microsoft Teams API", "Tailwind CSS 4", "Resend", "Vercel"]
 url: "https://www.hmd.com.co"
 image: "/projects/hmd/hmd-5.png"
 screenshots:
   - "/projects/hmd/hmd-5.png"
-  - "/projects/hmd/hmd-.png"
   - "/projects/hmd/hmd-2.png"
   - "/projects/hmd/hmd-3.png"
   - "/projects/hmd/hmd-4.png"
-  - "/projects/hmd/hmd-5.png"
   - "/projects/hmd/hmd-6.png"
   - "/projects/hmd/hmd-7.png"
-featured: true
+featured: false
 professional: true
 order: 11
 status: "Live"
 buttons:
-  - label: "Live Website"
+  - label: "Live Platform"
     url: "https://www.hmd.com.co"
     style: "primary"
   - label: "View Details"
@@ -27,10 +27,8 @@ buttons:
     style: "secondary"
 ---
 
-- Structured physician training programs with 4-year and 3-year asynchronous curricula
-- Evidence Summary library with curated RCTs, meta-analyses, and clinical guidelines across specialties
-- iConnect community hub — live journal club sessions, peer collaboration, medical news feed, and physician networking
-- Physician dashboard for personalized learning recommendations and session tracking
-- ResumePro — AI-powered CV builder designed specifically for medical students, residents, and physicians
-- Global accessibility with 100% asynchronous curriculum for active physicians worldwide
-- Institutional partnership capabilities for extending elite physician development programs
+- **Verified-Physician Gate:** Implemented strict credential verification using US NPI registry checks, admin approval queues, and Supabase Row Level Security (RLS) ensuring medical discussions remain physician-only.
+- **Automated Medical Ingestion Engine:** Architected a 4-hour cron ingestion engine parsing NCBI PubMed, openFDA, ClinicalTrials.gov, and medical journal RSS feeds across 21 clinical specialties with title-hash deduplication.
+- **Microsoft Teams Integration:** Integrated the Microsoft Graph API with a pool of 25 organizer accounts for Journal Club sessions and browser-based audio/video clinical consults.
+- **Database Architecture:** Authored and deployed 41 additive, zero-data-loss SQL migrations in Supabase Postgres, incorporating Realtime websockets for instant messaging and notifications.
+- **E-Learning & Board Prep:** Engineered the iQbank USMLE-style question bank, evidence summaries library, and physician portfolio tracking.

@@ -6,9 +6,9 @@ problem: "A gaming platform needed a unified backend to integrate multiple exter
 solution: "Built a modular monolith backend with NestJS supporting 1,200+ games across 4 certified providers. Implemented idempotent transaction handling, secure callback validation, and reconciliation pipelines."
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
 image: "/projects/igaming-platform/dashboard.png"
-featured: true
+featured: false
 professional: true
-order: 2
+order: 5
 status: "Completed"
 ---
 

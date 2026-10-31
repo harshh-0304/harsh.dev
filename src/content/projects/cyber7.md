@@ -13,7 +13,7 @@ screenshots:
   - "/projects/cyber7/screen-6.jpg"
   - "/projects/cyber7/screen-7.jpg"
   - "/projects/cyber7/screen-8.jpg"
-featured: true
+featured: false
 professional: true
 order: 10
 status: "Completed"

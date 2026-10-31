@@ -1,10 +1,10 @@
 ---
 title: "Backend Engineer"
 company: "iGaming Platform"
-period: "Jan 2026 – Present"
+period: "Jan 2026 – Jun 2026"
 type: "Full-Time"
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "AWS", "Swagger"]
-order: 1
+order: 2
 ---
 
 - Integrated **1,200+ games** across **4 external gaming providers** with a production-ready backend

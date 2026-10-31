@@ -1,8 +1,8 @@
 export const site = {
   name: "Harsh Jadav",
-  title: "Harsh Jadav — Software Engineer",
+  title: "Harsh Jadav — Software Engineer at Amex Technology",
   description:
-    "I design and build digital products, from modern web applications to the systems that power them.",
+    "Software Engineer at Amex Technology architecting edge serverless platforms, fintech lending systems, and production AI pipelines.",
   url: "https://www.harshjadav.com",
   ogImage: "/og.png",
   role: "Software Engineer",
@@ -14,72 +14,90 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/harshh33/",
   resumeUrl: "/resume.pdf",
   avatar: "/avatar.jpeg",
-  availability: "Software Engineer · Based in India",
+  availability: "Software Engineer at Amex Technology · Based in India",
 };
 
 export const services = [
   {
     number: "01",
-    title: "Full-Stack Applications",
+    title: "Full-Stack & Edge Platforms",
     description:
-      "End-to-end web products, web apps, and management platforms engineered for speed, clean UX, and production stability.",
+      "High-performance web applications and directories on Next.js 16, React 19, and Cloudflare Workers (OpenNext) engineered for 36–80ms page loads and zero downtime.",
     icon: "globe",
   },
   {
     number: "02",
-    title: "Backend & API Architecture",
+    title: "Backend & Fintech Architecture",
     description:
-      "High-throughput REST APIs, multi-provider payment/wallet pipelines, database schemas, and cloud deployment pipelines.",
+      "Distributed Celery worker queues, Plaid bank verification, AES-256 encrypted vaults, Stripe payments, and relational schemas across Neon and Supabase Postgres.",
     icon: "code",
   },
   {
     number: "03",
-    title: "AI & Intelligent Automation",
+    title: "Voice AI & Intelligent Systems",
     description:
-      "Production AI integrations including LLM pipelines, speech synthesis, NLP workflows, and custom automation tools.",
+      "Production AI pipelines including Retell AI voice phone agents, dual-model NVIDIA Nemotron automated fact-checking pipelines, and local LLM integrations.",
     icon: "brain",
   },
 ];
 
 export const skills = {
-  Frontend: ["Next.js", "React", "React Native", "TypeScript", "Tailwind CSS"],
+  Frontend: [
+    "Next.js 16",
+    "React 19",
+    "React Native",
+    "TypeScript",
+    "Tailwind CSS v4",
+    "Vite",
+    "Motion",
+  ],
   Backend: [
+    "Python 3.11",
+    "Django",
+    "Celery",
     "Node.js",
     "NestJS",
     "Express",
-    "Python",
-    "Django",
-    "Flask",
-    "ASP.NET Core",
-    "Clerk",
-    "Python Scraping",
-    "BeautifulSoup",
+    "REST APIs",
+    "Salesforce Metadata API",
   ],
-  Data: [
+  "Databases & Storage": [
     "PostgreSQL",
-    "MongoDB",
-    "SQL Server",
+    "Neon Serverless Postgres",
     "Supabase",
+    "MongoDB Atlas",
+    "Drizzle ORM",
     "Prisma",
-    "Entity Framework",
+    "Redis",
+    "Cloudflare R2",
   ],
-  "Cloud & DevOps": ["AWS", "Docker", "Vercel", "Hostinger", "Netlify Hosting"],
-  "AI & ML": [
-    "AI LLM Integration",
-    "LangChain",
-    "NLP",
-    "AI Plugins",
+  "Cloud & Edge": [
+    "Cloudflare Workers",
+    "OpenNext",
+    "Vercel",
+    "AWS",
+    "Google Kubernetes Engine",
+    "Docker",
+    "Wrangler",
+  ],
+  "AI & Voice": [
+    "Retell AI",
+    "Twilio SIP",
+    "NVIDIA Nemotron AI",
+    "Groq Whisper",
+    "Llama 3.3",
+    "Replicate BiRefNet",
     "Prompt Engineering",
   ],
-  Tools: [
+  "APIs & Tooling": [
+    "Plaid API",
+    "Stripe",
+    "UPS Shipping API",
+    "Resend",
+    "Clerk",
     "Git",
-    "GitHub",
-    "Postman",
-    "Swagger",
-    "Canva",
-    "Claude Code",
-    "MCP",
-    "HTML Email / Inline Email",
+    "GitHub Actions",
+    "Playwright",
   ],
 };
 
