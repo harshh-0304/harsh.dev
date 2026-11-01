@@ -17,7 +17,7 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       color: #1a1a1a;
       background: #ffffff;
-      font-size: 9.25pt;
+      font-size: 9pt;
       line-height: 1.32;
       -webkit-font-smoothing: antialiased;
     }
@@ -27,33 +27,31 @@
     }
     header {
       text-align: center;
-      margin-bottom: 9px;
-      border-bottom: 1.5px solid #0f172a;
-      padding-bottom: 6px;
+      margin-bottom: 7px;
     }
     h1 {
       font-size: 19pt;
       font-weight: 800;
       letter-spacing: -0.02em;
-      text-transform: uppercase;
       color: #0a0a0a;
+      margin-bottom: 2px;
+    }
+    .headline {
+      font-size: 9.25pt;
+      font-weight: 700;
+      color: #1e293b;
       margin-bottom: 3px;
     }
     .contact-line {
-      font-size: 8.75pt;
+      font-size: 8.5pt;
       color: #334155;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 6px 12px;
-    }
-    .contact-line span {
-      display: inline-flex;
-      align-items: center;
+      gap: 4px 8px;
     }
     .contact-line a {
       color: #1e293b;
-      font-weight: 600;
     }
     .contact-line a:hover {
       text-decoration: underline;
@@ -62,37 +60,26 @@
       color: #94a3b8;
     }
     section {
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
     h2 {
-      font-size: 10pt;
+      font-size: 9.75pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       color: #0f172a;
-      border-bottom: 1px solid #cbd5e1;
-      padding-bottom: 1.5px;
-      margin-bottom: 4px;
+      border-bottom: 1.5px solid #0f172a;
+      padding-bottom: 1px;
+      margin-bottom: 3.5px;
     }
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 8.75pt;
-    }
-    .skills-table td {
-      padding: 1px 0;
-      vertical-align: top;
-    }
-    .skills-label {
-      font-weight: 700;
-      color: #0f172a;
-      width: 155px;
-    }
-    .skills-val {
+    .summary-text {
+      font-size: 8.85pt;
       color: #334155;
+      line-height: 1.34;
+      text-align: justify;
     }
     .exp-item {
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
     .exp-item:last-child {
       margin-bottom: 0;
@@ -101,27 +88,18 @@
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1.5px;
+      margin-bottom: 1px;
     }
-    .exp-title {
-      font-size: 9.35pt;
+    .exp-title-company {
+      font-size: 9.15pt;
       font-weight: 700;
       color: #0f172a;
-    }
-    .exp-company {
-      font-weight: 600;
-      color: #334155;
     }
     .exp-date {
       font-size: 8.5pt;
       font-weight: 600;
       color: #475569;
       white-space: nowrap;
-    }
-    .exp-location {
-      font-size: 8.25pt;
-      color: #64748b;
-      font-weight: 400;
     }
     ul {
       list-style-type: disc;
@@ -136,47 +114,40 @@
       color: #0f172a;
       font-weight: 600;
     }
-    .proj-item {
-      margin-bottom: 4.5px;
+    .skills-block {
+      font-size: 8.75pt;
+      line-height: 1.34;
     }
-    .proj-item:last-child {
-      margin-bottom: 0;
+    .skills-line {
+      margin-bottom: 1.5px;
+      color: #334155;
     }
-    .proj-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 1px;
-    }
-    .proj-name {
-      font-size: 9.25pt;
-      font-weight: 700;
+    .skills-line strong {
       color: #0f172a;
+      font-weight: 700;
     }
-    .proj-tech {
-      font-size: 8.25pt;
-      color: #475569;
+    .proj-item {
+      font-size: 8.85pt;
+      margin-bottom: 2px;
+      color: #334155;
+    }
+    .proj-item strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+    .proj-item em {
       font-style: italic;
-    }
-    .proj-link {
-      font-size: 8.25pt;
-      color: #2563eb;
-      font-weight: 600;
+      color: #475569;
     }
     .edu-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      margin-bottom: 1px;
+      font-size: 9pt;
     }
-    .edu-degree {
-      font-size: 9.25pt;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    .edu-school {
+    .edu-left {
       font-weight: 600;
-      color: #334155;
+      color: #0f172a;
     }
     .edu-date {
       font-size: 8.5pt;
@@ -189,148 +160,110 @@
 
   <header>
     <h1>Harsh Jadav</h1>
+    <div class="headline">Software Engineer &middot; Backend, Fintech &amp; AI Systems &middot; TypeScript / Node.js / Python</div>
     <div class="contact-line">
       <span>Ahmedabad, India</span>
-      <span class="sep">|</span>
+      <span class="sep">&middot;</span>
       <span>+91 84019 60169</span>
-      <span class="sep">|</span>
+      <span class="sep">&middot;</span>
       <span><a href="mailto:bakasakuta33@gmail.com">bakasakuta33@gmail.com</a></span>
-      <span class="sep">|</span>
-      <span><a href="https://www.harshjadav.com">harshjadav.com</a></span>
-      <span class="sep">|</span>
+      <span class="sep">&middot;</span>
       <span><a href="https://github.com/harshh-0304">github.com/harshh-0304</a></span>
-      <span class="sep">|</span>
+      <span class="sep">&middot;</span>
       <span><a href="https://www.linkedin.com/in/harshh33/">linkedin.com/in/harshh33</a></span>
+      <span class="sep">&middot;</span>
+      <span><a href="https://www.harshjadav.com">harshjadav.com</a></span>
     </div>
   </header>
 
   <section>
-    <h2>Technical Skills</h2>
-    <table class="skills-table">
-      <tr>
-        <td class="skills-label">Languages:</td>
-        <td class="skills-val">Python, TypeScript, JavaScript (ES6+), SQL, C#, PHP, Bash</td>
-      </tr>
-      <tr>
-        <td class="skills-label">Frameworks & Backend:</td>
-        <td class="skills-val">Django, Django REST Framework, Celery, NestJS, Node.js, Express, React 19, Next.js 16, Vite, ASP.NET MVC</td>
-      </tr>
-      <tr>
-        <td class="skills-label">Cloud, DevOps & Edge:</td>
-        <td class="skills-val">Cloudflare Workers, OpenNext, Google Kubernetes Engine (GKE), Docker, AWS (EC2/S3), Vercel, GitHub Actions CI/CD</td>
-      </tr>
-      <tr>
-        <td class="skills-label">Databases & Storage:</td>
-        <td class="skills-val">PostgreSQL, Neon Serverless Postgres, Supabase, MongoDB Atlas, Redis, Drizzle ORM, Prisma ORM, Cloudflare R2</td>
-      </tr>
-      <tr>
-        <td class="skills-label">Security & Compliance:</td>
-        <td class="skills-val">ISO/IEC 27001:2022 ISMS (SoA v1.5), SOC 2 Control Mapping, GDPR, Plaid Link, AES-256-GCM, OAuth 2.0</td>
-      </tr>
-    </table>
+    <h2>Summary</h2>
+    <p class="summary-text">
+      Software engineer with 1.5+ years shipping fintech, iGaming, and AI products end to end: idempotent wallet and payment systems, edge-serverless platforms, and LLM pipelines in TypeScript and Python, built for financial correctness and security.
+    </p>
   </section>
 
   <section>
-    <h2>Work Experience</h2>
+    <h2>Experience</h2>
 
     <div class="exp-item">
       <div class="exp-header">
-        <div>
-          <span class="exp-title">Software Engineer</span> &ndash; <span class="exp-company">Amex Technology</span>
-        </div>
-        <div class="exp-date">Jul 2026 &ndash; Present | Ahmedabad, IN</div>
+        <div class="exp-title-company">Software Engineer, Amex Technology &mdash; Ahmedabad, India</div>
+        <div class="exp-date">Jul 2026 &ndash; Present</div>
       </div>
       <ul>
-        <li>Architected <strong>FirmsLedger</strong>, a programmatic directory of 10,000+ US manufacturers deployed on Cloudflare Workers (OpenNext) and Neon Postgres; reduced DB awake time from 69% to 26% and achieved 36&ndash;80ms warm edge latency.</li>
-        <li>Developed an automated dual-model NVIDIA Nemotron AI pipeline in GitHub Actions, fact-checking and generating profiles for 9,480+ manufacturers against live websites across 780+ production commits.</li>
-        <li>Built <strong>GoSwiftFund</strong>, a fintech funding marketplace with <strong>Plaid Link</strong> bank verification, AES-256-GCM encryption at rest, rules-based lender routing across 8 partners, instant SmartBiz API v3 pre-qualification, and a Retell AI voice agent.</li>
-        <li>Maintained live client platforms including <strong>CarSUVParts</strong> (real-time US NHTSA VIN decoding) and <strong>Custom Ink &amp; Thread</strong> (Next.js 16 monorepo; resolved Supabase connection bottlenecks with pooling and integrated UPS shipping APIs).</li>
+        <li><strong>SimpleT:</strong> Built a Salesforce AI translation SaaS with bidirectional Metadata API sync over OAuth 2.0 and multi-engine translation (DeepL, OpenAI, Claude, Gemini) on Django, Celery, Redis, and GKE; grew XLIFF coverage from 3 to 8 metadata types.</li>
+        <li>Audited 33 SimpleT backend modules for <strong>ISO/IEC 27001:2022</strong>, <strong>SOC 2</strong>, and <strong>GDPR</strong>; resolved the top 25 security and authorization issues and encrypted all API keys and Salesforce tokens at rest.</li>
+        <li><strong>FirmsLedger:</strong> Architected a programmatic directory of 10,000+ US manufacturers on Cloudflare Workers, Neon Postgres, and Drizzle ORM with 36&ndash;80 ms page loads; built a dual-model NVIDIA Nemotron pipeline that fact-checked 9,480+ company profiles.</li>
+        <li><strong>GoSwiftFund:</strong> Engineered a small-business lending marketplace with Plaid bank verification, AES-256-GCM encryption at rest, rules-based routing across 8 lenders, and instant SmartBiz API pre-qualification.</li>
+        <li>Implemented JWT/RBAC auth, PostgreSQL row-level security, and Stripe, Shopify Storefront, and Retell AI voice-agent integrations across client web and React Native (Expo) apps, plus SEO sites scoring 99&ndash;100/100.</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
-        <div>
-          <span class="exp-title">Full-Stack / Backend Engineer</span> &ndash; <span class="exp-company">SimpleTranslate</span>
-        </div>
-        <div class="exp-date">May 2024 &ndash; Jul 2026 | Remote</div>
+        <div class="exp-title-company">Backend Engineer, Betorra (iGaming Platform)</div>
+        <div class="exp-date">Jan 2026 &ndash; Jun 2026</div>
       </div>
       <ul>
-        <li>Engineered backend architecture for <strong>SimpleT</strong>, an enterprise Salesforce AI translation SaaS platform utilizing Python, Django REST Framework, Celery worker queues, and MongoDB Atlas on Google Kubernetes Engine (GKE).</li>
-        <li>Spearheaded compliance audits across all 33 backend modules for <strong>ISO/IEC 27001:2022 ISMS</strong>, <strong>SOC 2 control mapping</strong>, and <strong>GDPR readiness</strong>; identified and resolved top 25 priority vulnerabilities and drafted SoA v1.5.</li>
-        <li>Integrated bidirectional sync with the <strong>Salesforce Metadata API</strong> (SOAP/REST) and built asynchronous XLIFF 1.2/2.0 import/export engines, expanding Salesforce component coverage from 3 to 8 types with zero-data-loss deployments.</li>
-        <li>Hardened security posture: closed org-scoped authorization gaps, enforced object-level permissions, and encrypted client translation keys at rest using PyNaCl cryptography.</li>
+        <li>Architected a NestJS/TypeScript modular-monolith casino backend serving <strong>1,200+ games</strong> from 4 certified providers (OnlyPlay, Jacktop, EGS), with real-time session management on PostgreSQL, Prisma, and Redis.</li>
+        <li>Engineered an idempotent <strong>seamless-wallet engine</strong> for debit, credit, rollback, and settlement callbacks, using session-level mutex locking to eliminate double-spend and race conditions.</li>
+        <li>Secured provider callbacks with <strong>HMAC-SHA256/MD5</strong> signature verification and kept multi-currency balances consistent through exchange-rate locking and automated reconciliation.</li>
+        <li>Integrated the Payram crypto gateway with replay-protected webhooks and automated payouts; built a GGR affiliate revenue-share module on EventEmitter2 events with row-level locking (<code>SELECT &hellip; FOR UPDATE</code>).</li>
+        <li>Built bet-cycle simulation and dual-ledger E2E suites that verified zero-discrepancy balances before certification; shipped to AWS via multi-stage Docker builds and GitHub Actions CI/CD.</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
-        <div>
-          <span class="exp-title">Backend Engineer</span> &ndash; <span class="exp-company">iGaming Platform</span>
-        </div>
-        <div class="exp-date">Jan 2026 &ndash; Jun 2026 | Remote</div>
+        <div class="exp-title-company">AI Engineer, DubFlix</div>
+        <div class="exp-date">Jun 2025 &ndash; Dec 2025</div>
       </div>
       <ul>
-        <li>Architected a modular monolith backend in NestJS and PostgreSQL to integrate <strong>1,200+ games</strong> across 4 third-party providers.</li>
-        <li>Engineered high-concurrency provider APIs for session launches, real-time wallet callbacks, and transactional balance reconciliations.</li>
-        <li>Implemented strict <strong>transaction idempotency</strong>, callback signature validation, and OpenAPI/Swagger documentation.</li>
+        <li>Built generative-AI dubbing and translation pipelines (ElevenLabs, Whisper) that localized content into 5+ languages for OTT clients including KukuFM and Pocket TV.</li>
+        <li>Cut manual sound-editing time 40%+ by automating audio-video sync, diarization, and pause alignment; mentored 10+ interns.</li>
       </ul>
     </div>
 
     <div class="exp-item">
       <div class="exp-header">
-        <div>
-          <span class="exp-title">AI Engineer (Contract)</span> &ndash; <span class="exp-company">DubFlix</span>
-        </div>
-        <div class="exp-date">Jun 2025 &ndash; Dec 2025 | Remote</div>
+        <div class="exp-title-company">Full-Stack Developer Intern, Grownited Pvt. Ltd. &middot; Python Backend Intern, 360 Design</div>
+        <div class="exp-date">Jun 2024 &ndash; Apr 2025</div>
       </div>
       <ul>
-        <li>Optimized multilingual NLP pipelines and neural speech synthesis workflows supporting automated video dubbing across 5+ languages.</li>
+        <li>Built ChillSpace marketplace APIs with JWT RBAC, indexed MongoDB schemas, and Razorpay checkout; built Django REST APIs.</li>
       </ul>
     </div>
   </section>
 
   <section>
-    <h2>Featured Engineering Projects</h2>
-
+    <h2>Projects</h2>
     <div class="proj-item">
-      <div class="proj-header">
-        <span class="proj-name">SimpleT (Simple Translate) <span class="proj-tech">&ndash; Django, Celery, Salesforce Metadata API, GKE, ISO 27001</span></span>
-        <span class="proj-link"><a href="https://www.simpletranslate.io">simpletranslate.io</a></span>
-      </div>
-      <ul>
-        <li>Enterprise SaaS platform translating Salesforce org metadata via multi-LLM (Claude, OpenAI) and DeepL engines; features distributed Celery task queues, Redis rate-limiting, and XLIFF 1.2/2.0 bidirectional round-trip translation deployment.</li>
-      </ul>
+      <strong>VoiceDesk</strong> &mdash; Local voice assistant with Groq Whisper speech-to-text, Llama 3.3 70B responses, and conversation memory. <em>Python</em>
     </div>
-
     <div class="proj-item">
-      <div class="proj-header">
-        <span class="proj-name">FirmsLedger <span class="proj-tech">&ndash; Next.js 15, Cloudflare Workers, Neon Postgres, Drizzle, NVIDIA Nemotron AI</span></span>
-        <span class="proj-link"><a href="https://www.firmsledger.com">firmsledger.com</a></span>
-      </div>
-      <ul>
-        <li>SEO-first B2B directory indexing 10,000+ US manufacturers with dynamic filtering; automated dual-model NVIDIA AI pipeline that fact-checks company profiles against live source URLs; migrated from Vercel to Cloudflare Workers via OpenNext.</li>
-      </ul>
+      <strong>Linux Server Monitor</strong> &mdash; AIOps dashboard with Google AI anomaly detection and Telegram alerts. <em>Python, React, PostgreSQL, Docker</em>
     </div>
+  </section>
 
-    <div class="proj-item">
-      <div class="proj-header">
-        <span class="proj-name">GoSwiftFund <span class="proj-tech">&ndash; Next.js 16, React 19, Plaid API, AES-256-GCM, SmartBiz Partner API, Supabase</span></span>
-        <span class="proj-link"><a href="https://goswiftfund.com">goswiftfund.com</a></span>
-      </div>
-      <ul>
-        <li>Fintech commercial funding platform with 5-product apply flow, Plaid Link bank verification, server-side AES-256-GCM encryption, rules-based lender matching across 8 institutional partners, and Retell AI phone support agent.</li>
-      </ul>
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-block">
+      <div class="skills-line"><strong>Languages:</strong> TypeScript, JavaScript, Python, SQL, C#</div>
+      <div class="skills-line"><strong>Backend:</strong> Node.js, NestJS, Express, Django/DRF, Celery, REST, Webhooks, Swagger/OpenAPI, event-driven design</div>
+      <div class="skills-line"><strong>Frontend:</strong> Next.js 16, React 19, React Native (Expo), Tailwind CSS, Vite</div>
+      <div class="skills-line"><strong>Data:</strong> PostgreSQL (Neon, Supabase), Redis, MongoDB Atlas, Prisma, Drizzle ORM, Cloudflare R2</div>
+      <div class="skills-line"><strong>Cloud &amp; DevOps:</strong> AWS (EC2, S3), Cloudflare Workers, GKE, Docker, GitHub Actions, Vercel, Linux</div>
+      <div class="skills-line"><strong>Payments &amp; Security:</strong> Plaid, Stripe, Razorpay, crypto gateways, HMAC-SHA256, JWT, RBAC, row-level security</div>
+      <div class="skills-line"><strong>AI &amp; Testing:</strong> OpenAI, Claude, NVIDIA Nemotron, Whisper, ElevenLabs, Retell AI &middot; Jest, Supertest, Playwright</div>
     </div>
   </section>
 
   <section>
     <h2>Education</h2>
     <div class="edu-header">
-      <div>
-        <span class="edu-degree">Bachelor of Engineering in Computer Engineering</span> &ndash; <span class="edu-school">SAL College of Engineering</span>
-      </div>
-      <div class="edu-date">Sept 2021 &ndash; May 2025 | CGPA: 7.43 / 10</div>
+      <div class="edu-left"><strong>B.E. Computer Engineering</strong>, SAL College of Engineering &mdash; Ahmedabad &middot; CGPA 7.43/10</div>
+      <div class="edu-date">Sept 2021 &ndash; May 2025</div>
     </div>
   </section>
 
