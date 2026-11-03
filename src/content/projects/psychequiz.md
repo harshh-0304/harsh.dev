@@ -8,7 +8,7 @@ tech: ["Python", "Flask", "Machine Learning", "scikit-learn", "REST APIs"]
 github: "https://github.com/harshh-0304/psyche-quiz"
 featured: false
 professional: false
-order: 8
+order: 7
 status: "Completed"
 buttons:
   - label: "Source Code"

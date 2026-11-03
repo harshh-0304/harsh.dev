@@ -7,7 +7,7 @@ solution: "Built a complete voice assistant pipeline using open-source models â€
 tech: ["Python", "Groq Whisper", "Llama 3.3", "gTTS", "PyAudio"]
 github: "https://github.com/harshh-0304/VoiceDesk"
 featured: false
-order: 6
+order: 5
 status: "Built"
 ---
 

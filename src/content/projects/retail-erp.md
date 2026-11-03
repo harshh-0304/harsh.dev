@@ -7,7 +7,7 @@ solution: "Developed a modular ERP with ASP.NET MVC using clean 3-tier architect
 tech: ["ASP.NET MVC", "C#", "SQL Server", "JWT", "3-Tier Architecture"]
 github: "https://github.com/harshh-0304/Retail-ERP-system-"
 featured: false
-order: 9
+order: 8
 status: "Built"
 ---
 
