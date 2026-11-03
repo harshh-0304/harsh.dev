@@ -1,10 +1,10 @@
 ---
 title: "Backend Engineer"
 company: "Betorra (iGaming Platform)"
-period: "Jan 2026 – Jun 2026"
+period: "Jan 2026 – Present"
 type: "Full-Time"
 tech: ["NestJS", "TypeScript", "PostgreSQL", "Prisma ORM", "Redis", "AWS", "Docker", "Swagger"]
-order: 2
+order: 1
 ---
 
 - Architected a **NestJS/TypeScript modular-monolith** casino backend serving **1,200+ games** across 2 direct providers (OnlyPlay, Jacktop) and 1 major aggregator (EGS) aggregating 25+ game studios, with real-time session management on PostgreSQL, Prisma, and Redis.

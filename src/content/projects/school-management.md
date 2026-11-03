@@ -7,7 +7,7 @@ solution: "Built a web-based management application with ASP.NET Core MVC, Entit
 tech: ["ASP.NET Core MVC", "Entity Framework Core", "SQL Server", "Bootstrap 5"]
 github: "https://github.com/harshh-0304/School-Management-System"
 featured: false
-order: 18
+order: 9
 status: "Built"
 ---
 

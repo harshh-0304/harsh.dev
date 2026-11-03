@@ -8,7 +8,7 @@ tech: ["Python", "Node.js", "React", "PostgreSQL", "Google AI", "Telegram Bot AP
 github: "https://github.com/harshh-0304/linux-server-monitor"
 featured: false
 professional: false
-order: 15
+order: 6
 status: "Completed"
 buttons:
   - label: "Source Code"

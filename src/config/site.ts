@@ -1,8 +1,8 @@
 export const site = {
   name: "Harsh Jadav",
-  title: "Harsh Jadav — Software Engineer at Amex Technology",
+  title: "Harsh Jadav — Software Engineer",
   description:
-    "Software Engineer at Amex Technology architecting edge serverless platforms, fintech lending systems, and production AI pipelines.",
+    "Software Engineer specializing in scalable API architectures, high-concurrency backend services, and modern digital platforms.",
   url: "https://www.harshjadav.com",
   ogImage: "/og.png",
   role: "Software Engineer",
@@ -12,54 +12,51 @@ export const site = {
   phone: "+91 84019 60169",
   github: "https://github.com/harshh-0304",
   linkedin: "https://www.linkedin.com/in/harshh33/",
-  resumeUrl: "/resume.pdf",
+  resumeUrl: "",
   avatar: "/avatar.jpeg",
-  availability: "Software Engineer at Amex Technology · Based in India",
+  availability: "Available for Software Engineering Roles · Based in India",
 };
 
 export const services = [
   {
     number: "01",
-    title: "Full-Stack & Edge Platforms",
+    title: "Full-Stack Applications",
     description:
-      "High-performance web applications and directories on Next.js 16, React 19, and Cloudflare Workers (OpenNext) engineered for 36–80ms page loads and zero downtime.",
+      "High-performance web applications, programmatic directories, and management platforms engineered for speed, clean UX, and production stability.",
     icon: "globe",
   },
   {
     number: "02",
-    title: "Backend & Fintech Architecture",
+    title: "Backend & Distributed Systems",
     description:
-      "Distributed Celery worker queues, Plaid bank verification, AES-256 encrypted vaults, Stripe payments, and relational schemas across Neon and Supabase Postgres.",
+      "High-concurrency RESTful APIs, modular monolith architectures, idempotent wallet transactions, Redis caching, and robust relational schemas on PostgreSQL.",
     icon: "code",
   },
   {
     number: "03",
-    title: "Voice AI & Intelligent Systems",
+    title: "AI & Intelligent Automation",
     description:
-      "Production AI pipelines including Retell AI voice phone agents, dual-model NVIDIA Nemotron automated fact-checking pipelines, and local LLM integrations.",
+      "Production AI pipelines including local LLM speech assistants, automated fact-checking pipelines, NLP workflows, and custom automation tools.",
     icon: "brain",
   },
 ];
 
 export const skills = {
   Frontend: [
-    "Next.js 16",
+    "Next.js 15/16",
     "React 19",
-    "React Native",
     "TypeScript",
-    "Tailwind CSS v4",
+    "Tailwind CSS",
     "Vite",
     "Motion",
   ],
   Backend: [
-    "Python 3.11",
-    "Django",
-    "Celery",
     "Node.js",
     "NestJS",
     "Express",
+    "Python",
+    "Django",
     "REST APIs",
-    "Salesforce Metadata API",
   ],
   "Databases & Storage": [
     "PostgreSQL",
@@ -76,23 +73,18 @@ export const skills = {
     "OpenNext",
     "Vercel",
     "AWS",
-    "Google Kubernetes Engine",
     "Docker",
     "Wrangler",
   ],
-  "AI & Voice": [
-    "Retell AI",
-    "Twilio SIP",
+  "AI & ML": [
     "NVIDIA Nemotron AI",
     "Groq Whisper",
     "Llama 3.3",
-    "Replicate BiRefNet",
+    "NLP Pipelines",
     "Prompt Engineering",
   ],
   "APIs & Tooling": [
-    "Plaid API",
     "Stripe",
-    "UPS Shipping API",
     "Resend",
     "Clerk",
     "Git",

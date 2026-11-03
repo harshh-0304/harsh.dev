@@ -4,7 +4,7 @@ company: "360 Design"
 period: "Jun 2024 – Jul 2024"
 type: "Internship"
 tech: ["Python", "Django", "REST APIs", "PostgreSQL"]
-order: 5
+order: 4
 ---
 
 - Designed and tested backend **REST APIs using Django**, structuring data models and endpoints for internal business tools

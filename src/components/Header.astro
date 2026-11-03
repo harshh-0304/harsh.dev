@@ -26,20 +26,22 @@ import { site, navigation } from "@/config/site";
         ))
       }
 
-      <!-- Resume Button in Navbar -->
-      <a
-        href={site.resumeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-1.5 text-xs font-semibold text-text-primary shadow-2xs hover:border-slate-900 hover:bg-surface-alt transition-all"
-      >
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-        Resume
-      </a>
+      <!-- Resume Button in Navbar (if available) -->
+      {site.resumeUrl && (
+        <a
+          href={site.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 rounded-full border border-border bg-white px-3.5 py-1.5 text-xs font-semibold text-text-primary shadow-2xs hover:border-slate-900 hover:bg-surface-alt transition-all"
+        >
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Resume
+        </a>
+      )}
 
       <!-- Contact Button -->
       <a
@@ -90,19 +92,21 @@ import { site, navigation } from "@/config/site";
           </a>
         ))
       }
-      <a
-        href={site.resumeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="mobile-nav-link inline-flex items-center justify-between py-2 text-base font-medium text-text-secondary hover:text-brand"
-      >
-        <span>Download Resume / CV</span>
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-          <polyline points="7 10 12 15 17 10"></polyline>
-          <line x1="12" y1="15" x2="12" y2="3"></line>
-        </svg>
-      </a>
+      {site.resumeUrl && (
+        <a
+          href={site.resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mobile-nav-link inline-flex items-center justify-between py-2 text-base font-medium text-text-secondary hover:text-brand"
+        >
+          <span>Download Resume / CV</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+        </a>
+      )}
       <a
         href="#contact"
         class="mobile-nav-link mt-2 inline-flex items-center justify-center rounded-lg bg-brand px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-brand/90 transition-all"

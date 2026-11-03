@@ -10,9 +10,9 @@ screenshots:
   - "/projects/cdieng/about.png"
   - "/projects/cdieng/clients.png"
   - "/projects/cdieng/contact.png"
-featured: false
+featured: true
 professional: true
-order: 19
+order: 4
 status: "Completed"
 buttons:
   - label: "View Details"
